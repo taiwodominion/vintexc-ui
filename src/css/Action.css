@@ -1,0 +1,32 @@
+.action-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.action-container h1 {
+    color: 2.5em;
+    color: #fff;
+}
+
+.action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+@media (max-width: 768px) {
+    .action-container h1 {
+        font-size: 2em;
+        text-align: center;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        gap: 20px;
+    }
+} 

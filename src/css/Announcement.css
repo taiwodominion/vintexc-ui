@@ -1,0 +1,31 @@
+/* .announcement-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    height: 114px;
+    padding: 36px 256px ;
+} */
+
+.announcement-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    padding: 36px;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+
+.announcement-icon {
+    color: #00FA70;
+}
+
+@media (max-width: 768px) {
+    .announcement-bar {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+} 
