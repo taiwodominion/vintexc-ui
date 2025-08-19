@@ -14,6 +14,7 @@ const Footer = () => {
   return (
     <div>
     <footer className="footer">
+      <div className="footer-blur"></div>
       <div className="footer-container">
         <div className="footer-logo">
           <img src={logoImage} alt="Company Logo" />
@@ -42,7 +43,7 @@ const Footer = () => {
 
         <div className="footer-download">
           <h3>Scan to download</h3>
-          <img src={qrCodeImg} alt="QR Code" /> {/* Fixed img tag (self-closing) */}
+          <img src={qrCodeImg} alt="QR Code" />
         </div>
       </div>
       <div className="footer-bottom">

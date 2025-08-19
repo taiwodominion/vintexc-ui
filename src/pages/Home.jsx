@@ -12,7 +12,6 @@ import Footer from '../components/Footer'
 const Home = () => {
   return (
     <div className="home">
-      {/* Include the Hero component */}
       <Hero />
       <Announcement />
       <Contracts />

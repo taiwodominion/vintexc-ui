@@ -4,7 +4,7 @@
     justify-content: center;
     flex-direction: column;
     gap: 30px;
-    padding: 30px;
+    padding: 30px 60px;
 }
 
 .choice-title {
@@ -22,9 +22,10 @@
     gap: 30px;
 }
 
-.choice-content h1, p {
+.choice-content p {
     color: #fff;
     text-align: center;
+    font-size: 14px;
 }
 
 .choice-grid {

@@ -5,11 +5,13 @@ import "../css/About.css"
 const About = () => {
   return (
     <div className="about-container">
-        <div className="about-title">About</div>
+        <div className="section-label">
+          <div className="section-label-text">About</div>
+        </div>
         <div className="about-grid">
             <img src={aboutImage} alt="" />
             <div className="about-content">
-                <h1>About VINTEXC</h1>
+                <div className='section-title'>About VINTEXC</div>
                 <p>Vintexc Exchange Global Professional Station is an innovative digital asset trading 
                     platform that serves professional trading users around the world and is committed 
                     to discovering high-quality and innovative digital asset investment opportunities. 

@@ -1,11 +1,6 @@
 .hero-nav * {
   font-family: 'Inter', -apple-system, sans-serif;
 }
-/* 
-@font-face {
-  font-family: 'Inter';
-  src: url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-} */
 
 .hero-nav {
   color: white;
@@ -26,6 +21,7 @@ header {
   padding: 20px 50px;
   position: relative;
   z-index: 100;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.479);
 }
 
 .logo img {
@@ -55,7 +51,9 @@ header {
 }
 
 .nav-btn {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .nav-btn .btn {
@@ -92,7 +90,7 @@ header {
 
 .hero {
   position: relative;
-  height: calc(100vh - 86px);
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,8 +103,9 @@ header {
   width: 100%;
   text-align: center;
   position: relative;
+  margin-top: 70px;
   z-index: 2;
-  padding: 0 20px;
+  /* padding: 0 20px; */
 }
 
 .hero-texts {
@@ -114,16 +113,17 @@ header {
 }
 
 .hero h1 {
-  font-size: 6.6vw;
+  font-size: 3.5em;
   margin-bottom: 1.5rem;
   font-weight: 700;
   color: #00FFA0;
+  padding-bottom: 20px;
   display: grid;
   line-height: 1.2;
 }
 
 .hero p {
-  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-size: 16px;
   max-width: 700px;
   margin: 0 auto 2rem;
   color: rgba(255, 255, 255, 0.9);
@@ -132,12 +132,10 @@ header {
 
 .hero-btns {
   display: flex;
+  align-items: center;
   justify-content: center;
   gap: 20px;
-  flex-wrap: wrap;
 }
-
-
 
 .coin {
   position: absolute;
@@ -253,7 +251,9 @@ header {
     top: 86px;
     left: 0;
     width: 100%;
+    height: 100vh;
     background: #101438;
+    border-radius: 50px 50px 0 0;
     padding: 20px;
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     transition: clip-path 0.4s ease;
@@ -263,9 +263,9 @@ header {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
   
-  .navbar ul {
+  .navbar ul{
     flex-direction: column;
-    gap: 15px;
+    gap: 35px;
     text-align: center;
   }
   
@@ -275,8 +275,8 @@ header {
   
   .mobile-signup-btn {
     display: block;
-    margin-top: 20px;
     text-align: center;
+    width: 100%;
   }
   
   .hamburger {
@@ -287,31 +287,71 @@ header {
     height: auto;
     padding: 80px 20px;
   }
+
+  .hero-content {
+    margin-top: 0;
+  }
+
+  .hero-texts {
+    gap: 0;
+  }
+
+  .hero-texts h1::before {
+    content: 'Secure & Intuitive Crypto Trading';
+    visibility: visible;
+    font-size: 0.5em;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+  }
+
+  .hero-texts  h1 {
+    visibility: hidden;
+    position: relative;
+    display: flex;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
   
   .hero-btns {
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
   }
 
-    .coin-1 {
-    top: 5%;
-    left: 3%;
-    }
+  .hero-btns button {
+    width: 100%;
+  }
 
-    .coin-2 {
-    top: 25%;
-    right: 5%;
-    }
 
-    .coin-3 {
-    top: 60%;
-    left: 15%;
-    }
 
-    .coin-4 {
-    top: 83%;
-    right: 12%;
-    }
+  .coin-1 {
+  width: 40px;
+  height: 40px;
+  top: 10%;
+  left: 3%;
+  }
+
+  .coin-2 {
+  width: 40px;
+  height: 40px;
+  top: 23%;
+  right: 3%;
+  }
+
+  .coin-3 {
+  width: 40px;
+  height: 40px;
+  top: 60%;
+  left: 15%;
+  }
+
+  .coin-4 {
+  width: 40px;
+  height: 40px; 
+  top: 83%;
+  right: 12%;
+  }
   
   .btn {
     width: 100%;

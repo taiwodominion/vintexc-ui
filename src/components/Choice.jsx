@@ -8,9 +8,11 @@ import "../css/Choice.css"
 const Choice = () => {
   return (
       <div className="choice-container">
-        <div className="choice-title">Why Choose Us</div>
+        <div className="section-label">
+            <div className="section-label-text">Why Choose Us</div>
+        </div>
         <div className="choice-content">
-            <h1>The VINTEXC Advantage</h1>
+            <div className='section-title'>The VINTEXC Advantage</div>
             <p>Vintexc is engineered for the future, providing robust access to the dynamic Futures markets and groundbreaking AI-powered analytics designed to uncover opportunities and optimize performance where human intuition often reaches its limits.</p>
             <div className="choice-grid">
                 <div className="box">

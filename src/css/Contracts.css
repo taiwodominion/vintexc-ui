@@ -1,328 +1,208 @@
-/*  .overlay {
-    background: rgba(128, 128, 128, 0.205); 
-} */
-
-.contract-container {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    align-items: center;
-    justify-content: center;
-    padding: 50px 50px 50px 150px;
+.popular-contracts-section {
+  position: relative;
+  padding: 5rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.75rem;
+  min-height: 100vh;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
-.contract-container h1 {
-    font-size: 4vw;
-    color: #fff;
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.5;
+  z-index: 1;
 }
 
-.contract-title {
-    padding: 30px 89px;
-    color: #00FFA0;
-    border-radius: 50px;
-    background: rgba(255, 255, 255, 0.05);
+.shape-4 {
+  background: #3b82f6;
+  width: 150px;
+  height: 150px;
+  top: 10%;
+  left: 0;
+  animation: float 8s ease-in-out infinite;
 }
 
-.contract-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 30px;
-    place-items: center;
+.shape-5 {
+  background: #3b82f6;
+  width: 150px;
+  height: 150px;
+  top: 60%;
+  right: 0;
+  animation: float 8s ease-in-out infinite;
 }
 
-.contract-logos {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
+.contracts-container {
+  width: 100%;
+  overflow-x:hidden;
+  padding: 0.5rem;
 }
 
-.coin-name,
-.coin-change,
-.coin-price,
-.coin-chart {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
+.contracts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  min-width: 600px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.coin-logo {
-    display: flex;
-    gap: 10px;
+.contract-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
 }
 
-.coin-logo h2 {
-    color: #fff;
+.contract-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.coin-logo p {
-    color: #ddddddaf;
+.contract-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 150px;
+  margin-bottom: 0.5rem;
 }
 
-.contract-logos img:first-child{
-    background: #c9bc4859;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    padding: 5px;
-    object-fit: cover;
+.contract-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
-.contract-logos img:nth-child(2) {
-    background: #1519fe59;
+.contract-details {
+  display: flex;
+  flex-direction: column;
 }
 
-.contract-coin:nth-child(3) img {
-    background: #1dfe1559;
+.contract-symbol {
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.5px;
 }
 
-.contract-coin:last-child img {
-    background: #fe1d1559;
+.contract-name {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.75rem;
+  line-height: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.coin-changes {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
+.contract-metric {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 90px;
+  margin-bottom: 0.5rem;
 }
 
-.coin-changes h3,
-.coin-prices h3,
-.coin-charts h3 {
-    font-size: 18px;
-    color: #ddddddaf;
+@media (min-width: 640px) {
+  .contract-metric {
+    margin-bottom: 0;
+  }
 }
 
-.coin-changes p {
-    color: #00FA70;
+.metric-label {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.75rem;
+  line-height: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
 }
 
-.coin-prices {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
+.metric-value {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
 }
 
-.coin-prices p {
-    color: #fff;
+.positive-change {
+  color: #10B981;
 }
 
-.coin-charts {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 13px;
+.negative-change {
+  color: #EF4444;
 }
 
-.trade-buttons {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
+.price-value {
+  color: white;
 }
 
-.trade-buttons button {
-    color: #00FFA0;
-    border-radius: 10px;
-    padding: 20px 50px;
-    border: none;
-    background: #00ffa24d;
-    font-weight: bold;
+.volume-value {
+  color: white;
 }
 
-.view-crypto {
-    color: #00FFA0;
-    border-radius: 10px;
-    padding: 20px 100px;
-    border: none;
-    background: #00ffa24d;
-    font-weight: bold;
+.action-container {
+  min-width: 100px;
 }
 
-@media (max-width: 998px) {
-    .contract-container {
-        padding: 50px 10px 50px 20px;
-    }
-
-    .contract-grid {
-        gap: 20px;
-    }
-
-    .coin-logo h2 {
-        font-size: 19px;
-    }
-
-    .coin-changes h3,
-    .coin-charts h3,
-    .coin-prices h3,
-    .coin-charts h3 {
-        font-size: 13px;
-    }
-
-    .trade-buttons button {
-        padding: 20px 50px;
-    }
+.trade-action-button {
+  cursor: pointer;
+  background-color: rgba(0, 255, 160, 0.1);
+  color: #00FFA0;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  width: 100%;
+  height: 2.5rem;
+  padding: 10px 30px;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(0, 255, 160, 0.2);
+  transition: all 0.2s ease;
+  font-weight: 600;
 }
 
-@media (max-width: 758px) {
-    .contract-container {
-        padding: 50px 10px;
-    }
-
-    .contract-grid {
-        gap: 15px;
-    }
-
-    .contract-logos img {
-        width: 35px;
-        height: 35px;
-        border-radius: 50%;
-        padding: 5px;
-    }
-
-    .coin-name,
-    .coin-change,
-    .coin-price,
-    .coin-chart {
-        gap: 1px;
-    }
-
-    .coin-name p,
-    .coin-change p,
-    .coin-price p,
-    .coin-chart p {
-        font-size: 13px;
-    }
-
-    .coin-logo h2 {
-        font-size: 19px;
-    }
-
-    .coin-changes h3,
-    .coin-charts h3,
-    .coin-prices h3,
-    .coin-charts h3 {
-        font-size: 13px;
-    }
-
-    .trade-buttons button {
-        padding: 10px 40px;
-        display: none;
-    }
+.trade-action-button:hover {
+  background-color: rgba(0, 255, 160, 0.2);
+  transform: scale(1.05);
 }
 
-
-/* .contract-container {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    align-items: center;
-    justify-content: center;
-    padding: 50px;
+.view-more-button {
+  cursor: pointer;
+  background-color: rgba(0, 255, 160, 0.1);
+  color: #00FFA0;
+  border: 1px solid #00FFA0;
+  font-size: 1rem;
+  width: 75%;
+  height: 3.25rem;
+  border-radius: 0.75rem;
+  margin-top: 2.5rem;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
-.contract-container h1 {
-    font-size: 4vw;
+.view-more-button:hover {
+  background-color: rgba(0, 255, 160, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 255, 160, 0.2);
 }
 
-.contract-title {
-    padding: 30px 89px;
-    color: #00FFA0;
-    border-radius: 50px;
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.contract-container h1, 
-.coin-logo  {
-    color: #fff;
-}
-
-.coin-logo {
-    font-size: 17px;
-}
-
-.coin-name {
-    display: grid; 
-    gap: 10px;
-}
-
-.contract-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
-}
-
-.contract-coin {
-    display: flex;
-    gap: 30px;
-}
-
-.coin-logos .coin-logo {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.contract-logo img {
-    background: #c9bc4859;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    padding: 5px;
-    object-fit: contain;
-}
-
-.contract-coin:nth-child(2) img {
-    background: #1519fe59;
-    width: 50px;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    padding: 5px;
-    object-fit: cover;
-}
-
-.contract-coin:nth-child(3) img {
-    background: #1dfe1559;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    padding: 5px;
-    object-fit: cover;
-}
-
-.contract-coin:last-child img {
-    background: #fe1d1559;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    padding: 5px;
-    object-fit: cover;
-}
-
-.coin-change, 
-.coin-price, 
-.coin-chart, 
-.coin-name p {
-    color: #d4cfcf;
-    font-size: 14px;
-}
-
-.trade-btn button {
-    color: #00FFA0;
-    border-radius: 10px;
-    padding: 20px 50px;
-    border: none;
-    background: #00ffa24d;
-    font-weight: bold;
-}
-
-.view-crypto {
-    color: #00FFA0;
-    border-radius: 10px;
-    padding: 20px 100px;
-    border: none;
-    background: #00ffa24d;
-    font-weight: bold;
+@media (min-width: 640px) {
+  .view-more-button {
+    width: 35vw;
+    max-width: 300px;
+  }
 }
 
 @media (max-width: 768px) {
-
-} */
+    .action-trade-container {
+        display: none;
+    }
+}
