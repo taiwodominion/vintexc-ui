@@ -116,17 +116,38 @@
 
 @media (max-width: 768px) {
   .footer {
-    display: flex;
-    flex-direction: column;
+    place-items: center;
+  }
+
+  .footer-logo {
     align-items: center;
+  }
+
+  .footer-logo p {
+    text-align: center;
   }
 
   .footer-container {
     grid-template-columns: 1fr;
+    place-items: center;
     gap: 20px;
   }
   
   .footer-links {
     margin-top: 20px;
+    text-align: center;
+  }
+
+  .footer-download {
+    align-items: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-blur {
+    display: none;
   }
 }
