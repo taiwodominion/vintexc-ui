@@ -29,7 +29,8 @@
 }
 
 .trade-content p {
-    text-align: left;
+    text-align: center;
+    font-size: 14px;
 }
 
 .trade-button {
@@ -68,4 +69,9 @@
     .trade-container img {
         width: 80%;
     }
+
+    .trade-content h1 {
+        text-align: center;
+    }
+
 }

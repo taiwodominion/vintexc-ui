@@ -1,8 +1,8 @@
-.popular-contracts-section {
+.market-leaders-container {
   position: relative;
   padding: 5rem 0.5rem;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: center;
   justify-content: center;
   /* margin-bottom: 1.75rem; */
@@ -18,7 +18,7 @@
   z-index: 1;
 }
 
-.shape-4 {
+.shape-7 {
   background: #3b82f6;
   width: 150px;
   height: 150px;
@@ -27,7 +27,7 @@
   animation: float 8s ease-in-out infinite;
 }
 
-.shape-5 {
+.shape-8 {
   background: #3b82f6;
   width: 150px;
   height: 150px;
@@ -35,38 +35,57 @@
   right: 0;
   animation: float 8s ease-in-out infinite;
 }
-
-.contracts-container {
+/* 
+.markets-container {
   width: 100%;
   overflow-x: scroll;
   padding: 0.5rem;
+} */
+
+.market-leaders-grid::-webkit-scrollbar {
+  height: 2px;
+  width: 6px;
 }
 
-.contracts-container::-webkit-scrollbar {
-  height: 1px;
-  width: 1px;
-}
-
-.contracts-container::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
+.market-leaders-grid::-webkit-scrollbar-track {
+  background: transparent;
   border-radius: 3px;
 }
 
-.contracts-container::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.05);
+.market-leaders-grid::-webkit-scrollbar-thumb {
+  background: transparent;
   border-radius: 3px;
 }
 
-.contracts-list {
+.market-leaders-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    width: 100%;
+    overflow-x: scroll;
+    padding: 0.5rem;
+}
+
+.market-leaders-title {
+  font-family:'Inter', -apple-system, sans-serif;
+  font-size: 2em;
+  color: #fff;
+  text-align: left;
+  padding: 20px;
+}
+
+.markets-list {
   display: flex;
   flex-direction: column;
+  border: 1px solid #dddddd34;
+  border-radius: 30px;
   gap: 1.25rem;
   min-width: 600px;
   max-width: 800px;
   margin: 0 auto;
 }
 
-.contract-card {
+.market-card {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -76,13 +95,13 @@
   transition: all 0.3s ease;
 }
 
-.contract-card:hover {
+.market-card:hover {
   background: rgba(255, 255, 255, 0.05);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.contract-info {
+.market-info {
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -90,7 +109,7 @@
   margin-bottom: 0.5rem;
 }
 
-.contract-icon {
+.market-icon {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
@@ -98,12 +117,12 @@
   border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
-.contract-details {
+.market-details {
   display: flex;
   flex-direction: column;
 }
 
-.contract-symbol {
+.market-symbol {
   color: white;
   font-size: 1rem;
   font-weight: 600;
@@ -111,7 +130,7 @@
   letter-spacing: 0.5px;
 }
 
-.contract-name {
+.market-name {
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.75rem;
   line-height: 1rem;
@@ -119,7 +138,7 @@
   letter-spacing: 0.5px;
 }
 
-.contract-metric {
+.market-metric {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -128,7 +147,7 @@
 }
 
 @media (min-width: 640px) {
-  .contract-metric {
+  .market-metric {
     margin-bottom: 0;
   }
 }
@@ -216,3 +235,9 @@
   }
 }
 
+
+@media (max-width: 968px) {
+    .market-leaders-grid {
+        grid-template-columns: 1fr;
+    }
+}

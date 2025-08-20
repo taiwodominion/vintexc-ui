@@ -28,8 +28,8 @@
 }
 
 .about-container img {
-    width: 450px;
-    height: 414px;
+    width: 400px;
+    height: 400px;
     filter: grayscale(100%)
 }
 
@@ -40,5 +40,12 @@
 
     .about-content h1 {
         text-align: center;
+    }
+}
+
+@media (max-width: 478px) {
+    .about-grid img {
+        max-width: 250px;
+        height: 250px;
     }
 }

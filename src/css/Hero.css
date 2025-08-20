@@ -1,8 +1,8 @@
-.hero-nav * {
+/* .hero-container * {
   font-family: 'Inter', -apple-system, sans-serif;
-}
+} */
 
-.hero-nav {
+.hero-container {
   color: white;
   min-height: 100vh;
   padding: 20px;
@@ -86,7 +86,7 @@ header {
 .hamburger span:nth-child(2),
 .hamburger span:last-child {
     width: 50%;
-}
+} 
 
 .hero {
   position: relative;
@@ -367,6 +367,11 @@ header {
   /* .hero h1 {
     font-size: 2.2rem;
   } */
+
+  .logo img {
+    width: 100px;
+    height: 50px;
+  }
   
   .hero p {
     font-size: 1rem;

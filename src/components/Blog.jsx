@@ -12,7 +12,7 @@ const Blog = () => {
     <div className='overlay'>
         <div className="blog-container">
             <div className="blog-title">Blog</div>
-            <h1>News and Informations</h1>
+            <div className="section-title">News and Informations</div>
             <p>Follow trading trends and continually update your skills by 
                 learning new techniques from the world.</p>
             <div className="blog-grid">

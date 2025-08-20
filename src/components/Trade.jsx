@@ -9,7 +9,7 @@ const Trade = () => {
             <img src={tradeImg} alt="" />
             <div className="trade-content">
                 <h1>Trade Anytime, Anywhere</h1>
-                <p>Download our app to enjoy all the benefits of <br /> <span>VINTEXC</span> on the go.</p>
+                <p>Download our app to enjoy all the benefits of <span>VINTEXC</span> on the go.</p>
                 <div className="trade-button">
                     <button>Get Started</button>
                     <button className='outline'>Start Trading</button>

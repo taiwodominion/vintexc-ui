@@ -5,7 +5,7 @@ import EthereumIcon from '../assets/eth.png';
 import dogeIcon from '../assets/doge.png';
 import coinsIcon from '../assets/coins.png';
 
-const PopularContracts = () => {
+const Contracts = ({ showCryptoBtn = true }) => {
   const contractsData = [
     {
       id: 1,
@@ -102,7 +102,7 @@ const PopularContracts = () => {
         <p className="section-label-text">Market</p>
       </div>
       
-      <h2 className="section-title">Popular Contracts</h2>
+      <div className="section-title">Popular Contracts</div>
       
       <div className="contracts-container">
         <div className="contracts-list">
@@ -137,18 +137,21 @@ const PopularContracts = () => {
                 <p className="metric-value chart-value">{contract.chart}</p>
               </div>
               
-              <div className="action-trade-container">
+                <div className="action-trade-container">
                 <button className="trade-action-button">Trade</button>
-              </div>
+                </div>
             </div>
           ))}
         </div>
       </div>
       
-      <button className="view-more-button">View Other Crypto</button>
+
+      {showCryptoBtn && (
+        <button className="view-more-button">View Other Crypto</button>
+      )}
     </section>
     </div>
   );
 };
 
-export default PopularContracts;
+export default Contracts;
