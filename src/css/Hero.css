@@ -1,93 +1,3 @@
-/* .hero-container * {
-  font-family: 'Inter', -apple-system, sans-serif;
-} */
-
-.hero-container {
-  color: white;
-  min-height: 100vh;
-  padding: 20px;
-  overflow-x: hidden;
-}
-
-.navbar .active a {
-  color: #00FFA0;
-  position: relative;
-}
-
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 50px;
-  position: relative;
-  z-index: 100;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.479);
-}
-
-.logo img {
-  width: 144px;
-  height: 46px;
-  display: block;
-  object-fit: cover;
-}
-
-.navbar ul {
-  display: flex;
-  gap: 30px;
-  list-style: none;
-  align-items: center;
-}
-
-.navbar a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-  white-space: nowrap;
-}
-
-.navbar a:hover {
-  color: #00FFA0;
-}
-
-.nav-btn {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.nav-btn .btn {
-  padding: 10px 24px;
-  font-size: 0.9rem;
-}
-
-.mobile-signup-btn {
-  display: none;
-}
-
-.hamburger {
-  display: none;
-  cursor: pointer;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 21px;
-}
-
-.hamburger span {
-  display: block;
-  height: 3px;
-  width: 100%;
-  background: #00FFA0;
-  transition: all 0.3s ease;
-  border-radius: 3px;
-}
-
-.hamburger span:nth-child(2),
-.hamburger span:last-child {
-    width: 50%;
-} 
-
 .hero {
   position: relative;
   height: auto;
@@ -113,7 +23,7 @@ header {
 }
 
 .hero h1 {
-  font-size: 3.5em;
+  font-size: 3.5rem;
   margin-bottom: 1.5rem;
   font-weight: 700;
   color: #00FFA0;
@@ -123,8 +33,9 @@ header {
 }
 
 .hero p {
-  font-size: 16px;
-  max-width: 700px;
+  font-size: 15px;
+  max-width: 560px;
+  font-weight: 400;
   margin: 0 auto 2rem;
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.6;
@@ -149,8 +60,8 @@ header {
 
 .coin-1 {
   background: #fee71559;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   top: 20%;
   left: 3%;
   border-radius: 50%;
@@ -160,8 +71,8 @@ header {
 
 .coin-2 {
   background: #fe1d1559;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   top: 5%;
   right: 5%;
   border-radius: 50%;
@@ -171,8 +82,8 @@ header {
 
 .coin-3 {
   background: #1519fe59;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   top: 60%;
   left: 15%;
   padding: 5px;
@@ -182,8 +93,8 @@ header {
 
 .coin-4 {
   background: #1dfe1559;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   top: 70%;
   right: 20%;
   border-radius: 50%;
@@ -230,60 +141,15 @@ header {
   0%, 100% { transform: translate(0, 0); }
   50% { transform: translate(-20px, -20px); }
 }
-
+/* 
 @media (max-width: 1024px) {
   header {
     padding: 20px 30px;
   }
-  
-  .navbar ul {
-    gap: 20px;
-  }
-}
+} */
 
 @media (max-width: 768px) {
-  header {
-    padding: 15px;
-  }
-  
-  .navbar {
-    position: fixed;
-    top: 86px;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: #101438;
-    border-radius: 50px 50px 0 0;
-    padding: 20px;
-    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    transition: clip-path 0.4s ease;
-  }
-  
-  .navbar.active {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  }
-  
-  .navbar ul{
-    flex-direction: column;
-    gap: 35px;
-    text-align: center;
-  }
-  
-  .nav-btn {
-    display: none;
-  }
-  
-  .mobile-signup-btn {
-    display: block;
-    text-align: center;
-    width: 100%;
-  }
-  
-  .hamburger {
-    display: flex;
-  }
-  
-  .hero {
+    .hero {
     height: auto;
     padding: 80px 20px;
   }
@@ -322,8 +188,6 @@ header {
   .hero-btns button {
     width: 100%;
   }
-
-
 
   .coin-1 {
   width: 40px;

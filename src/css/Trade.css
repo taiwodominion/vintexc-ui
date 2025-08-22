@@ -8,7 +8,7 @@
 
 .trade-container img {
     width: 400px;
-    height: 400px;
+    height: 250px;
     display: block;
     object-fit: contain;
 }
@@ -16,7 +16,7 @@
 .trade-content {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 10px;
 }
 
 .trade-content h1 {
@@ -37,27 +37,7 @@
     display: flex;
     gap: 20px;
     align-items: center;
-}
-
-.trade-button button {
-    width: 100%;
-    padding: 20px 0;
-    border-radius: 20px;
-    color: #000;
-    font-weight: 600;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-.trade-button button:first-child {
-    background: #00FFA0;
-    border: none;
-}
-
-.trade-button button:last-child {
-    background: transparent;
-    border: 2px solid #00FFA0;
-    color: #00FFA0;
+    margin-top: 20px;
 }
 
 @media (max-width: 998px) {

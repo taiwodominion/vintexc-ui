@@ -43,7 +43,9 @@ const MarketLeaders = () => {
   
     return (
       <div className="overlay">
-      <section className="market-leaders-container">        
+      <section className="market-leaders-container"> 
+        <div className="shape shape-7"></div>  
+        <div className="shape shape-8"></div>      
         <div className="market-leaders-grid">
             <div className="markets-list top-gainers">
                 <div className="market-leaders-title">Top Gainers</div>

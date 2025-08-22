@@ -23,7 +23,7 @@
 }
 
 .choice-content p {
-    color: #fff;
+    color: #ddd;
     text-align: center;
     font-size: 14px;
 }
@@ -62,8 +62,8 @@
         padding: 30px 10px;
     }
 
-    .choice-grid {
-        grid-template-columns: 1fr;
+    .choice-content .section-title {
+        margin-bottom: 0.35rem;
     }
 
     .choice-content {
@@ -85,5 +85,11 @@
 
     .choice-box p {
         font-size: 13px;
+    }
+}
+
+@media (max-width: 468px) {
+    .choice-grid {
+        grid-template-columns: 1fr;
     }
 }

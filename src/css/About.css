@@ -16,20 +16,20 @@
 .about-content {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    /* gap: 10px; */
     color: #fff;
 }
 
 .about-content p {
     text-align: left;
     font-size: 13px;
-    color: #ddd;
+    color: #dddddd94;
     line-height: 1.5;
 }
 
 .about-container img {
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 250px;
     filter: grayscale(100%)
 }
 
@@ -38,8 +38,9 @@
     grid-template-columns: 1fr;
     }
 
-    .about-content h1 {
-        text-align: center;
+    .about-content .section-title {
+        text-align: left;
+        margin-bottom: 0.35rem;
     }
 }
 

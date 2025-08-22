@@ -11,7 +11,9 @@ const Blog = () => {
   return (
     <div className='overlay'>
         <div className="blog-container">
-            <div className="blog-title">Blog</div>
+            <div className="section-label">
+                <div className="section-label-text">Blog</div>
+            </div>
             <div className="section-title">News and Informations</div>
             <p>Follow trading trends and continually update your skills by 
                 learning new techniques from the world.</p>

@@ -1,0 +1,88 @@
+.customer-support-section {
+  padding: 0 1.5rem;
+  padding-top: 0;
+}
+
+@media (min-width: 768px) {
+  .customer-support-section {
+    padding-top: 1rem;
+  }
+}
+
+.customer-support-title {
+  color: white;
+  font-size: 1.875rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.25rem;
+  text-align: center;
+  padding: 0.75rem 0;
+}
+
+@media (min-width: 640px) {
+  .customer-support-title {
+    font-size: 2.25rem;
+  }
+}
+
+.customer-support-description {
+  color: #ffffffbf;
+  font-size: 14px;
+  font-weight: 400;
+  max-width: 420px;
+  margin: 0 auto;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.form-wrapper {
+  max-width: 700px;
+  width: 100%;
+  margin: 2rem auto 0;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.form-label {
+  color: #ffffffbf;
+  font-size: 13px;
+}
+
+.form-input {
+  background-color: #ffffff1a;
+  border: 1px solid #00ffa04d;
+  border-radius: 0.5rem;
+  height: 50px;
+  padding: 0 1rem;
+  font-size: 12.5px;
+  color: white;
+  outline: none;
+}
+
+.form-textarea {
+  background-color: #ffffff1a;
+  border: 1px solid #00ffa04d;
+  border-radius: 0.5rem;
+  height: 220px;
+  padding: 0.5rem 1rem;
+  font-size: 12.5px;
+  color: white;
+  resize: none;
+  outline: none;
+}
+
+.submit-button {
+  cursor: pointer;
+  background-color: #00ffa01a;
+  color: #00ffa0;
+  border: 1px solid #00ffa0;
+  font-size: 15px;
+  width: 100%;
+  height: 44px;
+  border-radius: 0.75rem;
+  margin: 2.5rem 0;
+}

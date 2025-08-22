@@ -52,10 +52,14 @@ const Footer = () => {
             <a href="">
               <img src={playStoreImg} alt="" />
             </a>
-            <img src={shoppingImg} alt="" />
-            <img src={microsoftImg} alt="" />
+            {/* <a href="">
+              <img src={shoppingImg} alt="" />
+            </a> */}
+            {/* <img src={microsoftImg} alt="" /> */}
             <img src={appleStoreImg} alt="" />
-            <img src={twitterImg} alt="" />
+            <a hrwf="">
+              <img src={twitterImg} alt="" />
+            </a>
         </div>
       </div>
     </footer>

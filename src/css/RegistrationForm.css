@@ -1,0 +1,264 @@
+.registration-container {
+  flex: 1;
+}
+
+.registration-content {
+  padding: 1.5rem 1rem;
+}
+
+@media (min-width: 640px) {
+  .registration-content {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .registration-content {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .registration-content {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+.navigation-section {
+  margin-top: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.back-button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 14px;
+  background: none;
+  border: none;
+}
+
+.back-icon {
+  color: rgb(0, 255, 160);
+  height: 1em;
+  width: 1em;
+}
+
+.welcome-heading {
+  color: white;
+  font-size: 1.875rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.25rem;
+  text-align: center;
+  padding: 0.75rem 0;
+}
+
+@media (min-width: 640px) {
+  .welcome-heading {
+    font-size: 2.25rem;
+  }
+}
+
+.welcome-subtitle {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 14px;
+  font-weight: 400;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.25rem;
+  text-align: center;
+  padding-bottom: 2.25rem;
+}
+
+.form-container {
+  max-width: 700px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+}
+
+.registration-form {
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.form-label {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 13px;
+}
+
+.form-input {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 255, 160, 0.3);
+  border-radius: 0.5rem;
+  height: 50px;
+  padding: 0 1rem;
+  width: 100%;
+  font-size: 12.5px;
+  color: white;
+  outline: none;
+}
+
+.form-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12.5px;
+}
+
+.verification-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.verification-input-wrapper {
+  position: relative;
+  flex: 1;
+}
+
+.verification-input {
+  padding-right: 2.5rem;
+  width: 100%;
+}
+
+.send-code-button {
+  cursor: pointer;
+  background-color: rgb(0, 255, 160);
+  color: rgb(16, 20, 40);
+  font-weight: 600;
+  font-size: 13px;
+  padding: 0 1.5rem;
+  height: 50px;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+.send-code-button:disabled {
+  opacity: 0.5;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.password-group {
+  position: relative;
+}
+
+.password-input {
+  padding-right: 2.5rem;
+}
+
+.password-toggle {
+  width: 1.25rem;
+  height: 1.25rem;
+  position: absolute;
+  right: 1rem;
+  top: 2.75rem;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.terms-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.terms-checkbox {
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.25rem;
+  color: rgb(0, 255, 160);
+  background-color: transparent;
+  border: 2px solid rgba(0, 255, 160, 0.3);
+  border-radius: 0.25rem;
+}
+
+.terms-checkbox:focus {
+  ring: 2px;
+  ring-color: rgb(0, 255, 160);
+}
+
+.terms-label {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 13px;
+  line-height: 1.25rem;
+}
+
+.terms-link {
+  color: rgb(0, 255, 160);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.form-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 4.5rem;
+}
+
+.register-button {
+  cursor: pointer;
+  background-color: rgb(0, 255, 160);
+  color: rgb(16, 20, 40);
+  font-size: 15px;
+  font-weight: 600;
+  width: 90%;
+  height: 2.75rem;
+  border-radius: 0.75rem;
+  margin-bottom: 1.25rem;
+  border: none;
+}
+
+.register-button:disabled {
+  opacity: 0.5;
+}
+
+@media (min-width: 640px) {
+  .register-button {
+    width: 80%;
+  }
+}
+
+.account-prompt {
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 1.75rem;
+}
+
+.login-button {
+  cursor: pointer;
+  background-color: rgba(0, 255, 160, 0.1);
+  color: rgb(0, 255, 160);
+  border: 1px solid rgb(0, 255, 160);
+  font-size: 15px;
+  width: 90%;
+  height: 2.75rem;
+  border-radius: 0.75rem;
+  border: none;
+}
+
+@media (min-width: 640px) {
+  .login-button {
+    width: 80%;
+  }
+}

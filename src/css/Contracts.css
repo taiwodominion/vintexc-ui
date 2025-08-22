@@ -90,6 +90,11 @@
   margin-bottom: 0.5rem;
 }
 
+.contract-info img {
+  width: 32px;
+  height: 32px;
+}
+
 .contract-icon {
   width: 2.5rem;
   height: 2.5rem;
@@ -106,7 +111,7 @@
 .contract-symbol {
   color: white;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 0.25rem;
   letter-spacing: 0.5px;
 }
@@ -192,15 +197,14 @@
   background-color: rgba(0, 255, 160, 0.1);
   color: #00FFA0;
   border: 1px solid #00FFA0;
-  font-size: 1rem;
+  font-size: 13px;
   width: 75%;
   height: 3.25rem;
   border-radius: 0.75rem;
   margin-top: 2.5rem;
   transition: all 0.3s ease;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: 0.5px;
-  text-transform: uppercase;
 }
 
 .view-more-button:hover {

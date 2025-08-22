@@ -68,7 +68,7 @@
 
 .market-leaders-title {
   font-family:'Inter', -apple-system, sans-serif;
-  font-size: 2em;
+  font-size: 1.5rem;
   color: #fff;
   text-align: left;
   padding: 20px;
@@ -78,9 +78,10 @@
   display: flex;
   flex-direction: column;
   border: 1px solid #dddddd34;
-  border-radius: 30px;
-  gap: 1.25rem;
-  min-width: 600px;
+  padding: 10px;
+  border-radius: 20px;
+  gap: 1rem;
+  min-width: 500px;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -90,7 +91,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 1rem 0.5rem;
   border-radius: 0.75rem;
   transition: all 0.3s ease;
 }
@@ -110,8 +111,8 @@
 }
 
 .market-icon {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid rgba(255, 255, 255, 0.1);
@@ -206,7 +207,7 @@
   transform: scale(1.05);
 }
 
-.view-more-button {
+/* .view-more-button {
   cursor: pointer;
   background-color: rgba(0, 255, 160, 0.1);
   color: #00FFA0;
@@ -226,18 +227,15 @@
   background-color: rgba(0, 255, 160, 0.2);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 255, 160, 0.2);
-}
-
-@media (min-width: 640px) {
-  .view-more-button {
-    width: 35vw;
-    max-width: 300px;
-  }
-}
+} */
 
 
 @media (max-width: 968px) {
     .market-leaders-grid {
         grid-template-columns: 1fr;
+    }
+
+    .markets-list {
+      width: 100%;
     }
 }

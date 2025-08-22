@@ -25,8 +25,10 @@
   object-fit: cover;
 }
 
-.footer-logo p {
+.footer-logo p,
+.footer-bottom p {
   line-height: 1.6;
+  font-size: 14px;
   text-align: left;
   color: #bdc3c7;
 }
@@ -49,6 +51,7 @@
 .footer-links a {
   color: #bdc3c7;
   text-decoration: none;
+  font-size: 13px;
   transition: color 0.3s;
 }
 

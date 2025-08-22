@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import bitcoinImg from "../assets/bitcoin.png"
 import ethImg from "../assets/eth.png"
 import coinsImg from "../assets/coins.png"
@@ -5,6 +6,7 @@ import dogeImg from "../assets/doge.png"
 import "../css/Hero.css";
 
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <div className="overlay">
       <section className="hero-container">        
@@ -31,8 +33,8 @@ const Hero = () => {
               </p>
             </div>
             <div className="hero-btns">
-              <button className="btn">Get Started</button>
-              <button className="btn btn-outline">Start Trading</button>
+              <button className="btn" onClick={() => navigate("/login")} >Get Started</button>
+              <button className="btn btn-outline" onClick={() => navigate("/login")} >Start Trading</button>
             </div>
           </div>
         </section>
