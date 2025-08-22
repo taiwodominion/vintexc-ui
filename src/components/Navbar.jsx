@@ -7,7 +7,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const hamburgerRef = useRef(null);
   const navbarRef = useRef(null);
-  const location = useLocation(); // Get current location
+  const location = useLocation();
 
   useEffect(() => {
     const hamburger = hamburgerRef.current;
@@ -32,15 +32,12 @@ const Navbar = () => {
     };
 
     const handleNavItemClick = function() {
-      // Remove active class from all items
       navItems.forEach(navItem => {
         navItem.classList.remove('active');
       });
       
-      // Add active class to clicked item
       this.classList.add('active');
       
-      // Close mobile menu if open
       if (navbar.classList.contains('active')) {
         navbar.classList.remove('active');
         hamburger.classList.remove('active');
@@ -64,7 +61,6 @@ const Navbar = () => {
     };
   }, []);
 
-  // Set active class based on current route
   useEffect(() => {
     const navItems = document.querySelectorAll('.navbar ul li');
     navItems.forEach(item => {
@@ -87,10 +83,10 @@ const Navbar = () => {
           <li className={location.pathname === "/market" ? "active" : ""}><Link to="/market">Market</Link></li>
           <li className={location.pathname === "/support" ? "active" : ""}><Link to="/support">Support</Link></li>
           <li className="mobile-signup-btn">
-            <button className="btn">Sign Up</button>
+            <button className="btn" onClick={() => handleMobileButtonClick("/login")}>Sign Up</button>
           </li>
           <li className="mobile-signup-btn">
-            <button className="btn btn-outline">Sign In</button>
+            <button className="btn btn-outline" onClick={() => handleMobileButtonClick("/login")}>Sign In</button>
           </li>
         </ul>
       </nav>
