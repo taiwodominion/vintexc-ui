@@ -12,7 +12,8 @@ const Navbar = () => {
   useEffect(() => {
     const hamburger = hamburgerRef.current;
     const navbar = navbarRef.current;
-    const navItems = document.querySelectorAll('.navbar ul li');
+    // Exclude mobile buttons from navItems to prevent conflict
+    const navItems = document.querySelectorAll('.navbar ul li:not(.mobile-signup-btn)');
 
     const handleHamburgerClick = (e) => {
       e.stopPropagation();
@@ -62,7 +63,8 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    const navItems = document.querySelectorAll('.navbar ul li');
+    // Exclude mobile buttons from navItems to prevent conflict
+    const navItems = document.querySelectorAll('.navbar ul li:not(.mobile-signup-btn)');
     navItems.forEach(item => {
       item.classList.remove('active');
       const link = item.querySelector('a');
@@ -71,6 +73,16 @@ const Navbar = () => {
       }
     });
   }, [location]);
+
+  // Add this function to handle mobile button clicks
+  const handleMobileButtonClick = (path) => {
+    // Close mobile menu if open
+    if (navbarRef.current.classList.contains('active')) {
+      navbarRef.current.classList.remove('active');
+      hamburgerRef.current.classList.remove('active');
+    }
+    navigate(path);
+  };
 
   return (
     <header>
@@ -83,16 +95,18 @@ const Navbar = () => {
           <li className={location.pathname === "/market" ? "active" : ""}><Link to="/market">Market</Link></li>
           <li className={location.pathname === "/support" ? "active" : ""}><Link to="/support">Support</Link></li>
           <li className="mobile-signup-btn">
-            <button className="btn" onClick={() => handleMobileButtonClick("/login")}>Sign Up</button>
+            {/* <button className="btn" onClick={() => handleMobileButtonClick("/login")}>Sign Up</button> */}
+            <Link className="btn" to="/login">Sign Up</Link>
           </li>
           <li className="mobile-signup-btn">
-            <button className="btn btn-outline" onClick={() => handleMobileButtonClick("/login")}>Sign In</button>
+            {/* <button className="btn btn-outline" onClick={() => handleMobileButtonClick("/login")}>Sign In</button> */}
+            <Link className="btn btn-outline" to="/login">Sign In</Link>
           </li>
         </ul>
       </nav>
       <div className="nav-btn">
-      <button className="btn" onClick={() => navigate("/signup")}>Sign Up</button>        
-      <button className="btn btn-outline" onClick={() => navigate("/login")} >Sign In</button>
+        <button className="btn" onClick={() => navigate("/signup")}>Sign Up</button>        
+        <button className="btn btn-outline" onClick={() => navigate("/login")}>Sign In</button>
       </div>
       <div className="hamburger" id="hamburger" ref={hamburgerRef}>
         <span></span>

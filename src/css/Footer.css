@@ -10,7 +10,7 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
+  gap: 150px;
 }
 
 .footer-logo {
@@ -23,6 +23,11 @@
   width: 150px;
   height: 50px;
   object-fit: cover;
+}
+
+.footer-links-wrapper {
+    display: flex;
+    justify-content: space-between;
 }
 
 .footer-logo p,
@@ -117,7 +122,7 @@
   background: #ffffff48;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .footer {
     place-items: center;
   }
@@ -131,14 +136,17 @@
   }
 
   .footer-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr ;
     place-items: center;
     gap: 20px;
+  }
+
+  .footer-links-wrapper {
+    gap: 50px;
   }
   
   .footer-links {
     margin-top: 20px;
-    text-align: center;
   }
 
   .footer-download {

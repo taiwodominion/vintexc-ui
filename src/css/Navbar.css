@@ -34,7 +34,7 @@ header {
   align-items: center;
 }
 
-.navbar a {
+.navbar a:not(.mobile-signup-btn a){
   color: white;
   text-decoration: none;
   font-weight: 500;
@@ -42,7 +42,7 @@ header {
   white-space: nowrap;
 }
 
-.navbar a:hover {
+.navbar a:not(.mobile-signup-btn a):hover {
   color: #00FFA0;
 }
 

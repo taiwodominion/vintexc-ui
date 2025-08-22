@@ -21,7 +21,9 @@ const Footer = () => {
           <p>We provide innovative solutions to help your business grow and succeed in the digital world.</p>
         </div>
 
-        <div className="footer-links">
+         
+        <div className="footer-links-wrapper">
+            <div className="footer-links">
           <h3>Quick Links</h3>
           <ul>
             <li><a href="/">Home</a></li>
@@ -40,6 +42,9 @@ const Footer = () => {
             <li><a href="/order-status">Order Status</a></li>
           </ul>
         </div>
+        </div>
+
+
 
         <div className="footer-download">
           <h3>Scan to download</h3>
