@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from '../components/Navbar'
 import ContactForm from '../components/ContactForm'
-import FAQ from '../components/FAQ'
+import Faq from '../components/Faq'
 import Footer from '../components/Footer'
 
 const CustomerSupport = () => {
@@ -9,7 +9,7 @@ const CustomerSupport = () => {
     <div>
       <Navbar />
       <ContactForm />
-      <FAQ />
+      <Faq />
       <Footer />
     </div>
   );
