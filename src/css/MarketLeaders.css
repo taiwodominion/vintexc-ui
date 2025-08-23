@@ -60,10 +60,11 @@
 .market-leaders-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    place-items: center;
     gap: 30px;
     width: 100%;
     overflow-x: scroll;
-    padding: 0.5rem;
+    /* padding: 0.5rem 2rem; */
 }
 
 .market-leaders-title {
@@ -77,20 +78,21 @@
 .markets-list {
   display: flex;
   flex-direction: column;
-  border: 1px solid #dddddd34;
+  border: 1px solid #dddddd17;
   padding: 10px;
   border-radius: 20px;
   gap: 1rem;
-  min-width: 500px;
-  max-width: 800px;
+  min-width: 600px;
+  max-width: 750px;
   margin: 0 auto;
 }
 
 .market-card {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  gap: 2.5rem;
   padding: 1rem 0.5rem;
   border-radius: 0.75rem;
   transition: all 0.3s ease;
@@ -125,7 +127,7 @@
 
 .market-symbol {
   color: white;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 600;
   margin-bottom: 0.25rem;
   letter-spacing: 0.5px;
@@ -133,7 +135,7 @@
 
 .market-name {
   color: rgba(255, 255, 255, 0.7);
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   line-height: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -230,7 +232,7 @@
 } */
 
 
-@media (max-width: 968px) {
+@media (max-width: 1050px) {
     .market-leaders-grid {
         grid-template-columns: 1fr;
     }

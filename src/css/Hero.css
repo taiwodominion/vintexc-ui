@@ -60,8 +60,8 @@
 
 .coin-1 {
   background: #fee71559;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   top: 20%;
   left: 3%;
   border-radius: 50%;
@@ -71,8 +71,8 @@
 
 .coin-2 {
   background: #fe1d1559;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   top: 5%;
   right: 5%;
   border-radius: 50%;
@@ -82,10 +82,10 @@
 
 .coin-3 {
   background: #1519fe59;
-  width: 40px;
-  height: 40px;
-  top: 60%;
-  left: 15%;
+  width: 35px;
+  height: 35px;
+  top: 70%;
+  left: 10%;
   padding: 5px;
   border-radius: 50%;
   transform: rotate(20deg);
@@ -93,9 +93,9 @@
 
 .coin-4 {
   background: #1dfe1559;
-  width: 40px;
-  height: 40px;
-  top: 70%;
+  width: 35px;
+  height: 35px;
+  top: 90%;
   right: 20%;
   border-radius: 50%;
   padding: 5px;

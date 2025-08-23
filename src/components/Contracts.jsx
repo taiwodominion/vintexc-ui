@@ -92,6 +92,90 @@ const Contracts = ({ showCryptoBtn = true }) => {
                      filter="url(#shadow)"
                      points="0,20,20,10,40,15,60,5,80,15,100,10" />
               </svg>
+    },
+    {
+      id: 1,
+      symbol: "BITCOIN",
+      name: "BITCOIN",
+      icon: BitcoinIcon,
+      change: +14.04,
+      price: "$114.950K",
+      chart: <svg width="70" height="30" viewBox="0 0 100 30">
+                     <defs>
+                         <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+                         <feDropShadow dx="0" dy="7" 
+                         stdDeviation="7" flood-color="yellow" />
+                         </filter>
+                     </defs>
+                     <polyline fill="none"
+                     stroke="yellow"
+                     stroke-width="2"
+                     filter="url(#shadow)"
+                     points="0,20,20,10,40,15,60,5,80,15,100,10" />
+              </svg>
+    },
+    {
+      id: 2,
+      symbol: "ETHEREUM",
+      name: "ETHERUM",
+      icon: EthereumIcon,
+      change: +43.04,
+      price: "$4.235K",
+      chart: <svg width="70" height="30" viewBox="0 0 100 30">
+                     <defs>
+                         <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+                         <feDropShadow dx="0" dy="7" 
+                         stdDeviation="7" flood-color="yellow" />
+                         </filter>
+                     </defs>
+                     <polyline fill="none"
+                     stroke="yellow"
+                     stroke-width="2"
+                     filter="url(#shadow)"
+                     points="0,20,20,10,40,15,60,5,80,15,100,10" />
+              </svg>
+    },
+    {
+      id: 3,
+      symbol: "SOLANA",
+      name: "SOLANA",
+      icon: coinsIcon,
+      change: -14.23,
+      price: "$0.348",
+      chart: <svg width="70" height="30" viewBox="0 0 100 30">
+                     <defs>
+                         <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+                         <feDropShadow dx="0" dy="7" 
+                         stdDeviation="7" flood-color="yellow" />
+                         </filter>
+                     </defs>
+                     <polyline fill="none"
+                     stroke="yellow"
+                     stroke-width="2"
+                     filter="url(#shadow)"
+                     points="0,20,20,10,40,15,60,5,80,15,100,10" />
+              </svg>
+    },
+    {
+      id: 4,
+      symbol: "DOGE",
+      name: "DOGE",
+      icon: dogeIcon,
+      change: +17.06,
+      price: "$0.925",
+      chart: <svg width="70" height="30" viewBox="0 0 100 30">
+                     <defs>
+                         <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+                         <feDropShadow dx="0" dy="7" 
+                         stdDeviation="7" flood-color="yellow" />
+                         </filter>
+                     </defs>
+                     <polyline fill="none"
+                     stroke="yellow"
+                     stroke-width="2"
+                     filter="url(#shadow)"
+                     points="0,20,20,10,40,15,60,5,80,15,100,10" />
+              </svg>
     }
   ];
 
@@ -149,7 +233,7 @@ const Contracts = ({ showCryptoBtn = true }) => {
       
 
       {showCryptoBtn && (
-        <button className="view-more-button">View Other Crypto</button>
+        <button className="view-more-button" onClick={() => navigate("/market")}>View Other Crypto</button>
       )}
     </section>
     </div>

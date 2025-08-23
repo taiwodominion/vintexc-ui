@@ -96,17 +96,17 @@ const Navbar = () => {
           <li className={location.pathname === "/support" ? "active" : ""}><Link to="/support">Support</Link></li>
           <li className="mobile-signup-btn">
             {/* <button className="btn" onClick={() => handleMobileButtonClick("/login")}>Sign Up</button> */}
-            <Link className="btn" to="/login">Sign Up</Link>
+            <Link className="btn btn-outline" to="/login">Sign Up</Link>
           </li>
           <li className="mobile-signup-btn">
             {/* <button className="btn btn-outline" onClick={() => handleMobileButtonClick("/login")}>Sign In</button> */}
-            <Link className="btn btn-outline" to="/login">Sign In</Link>
+            <Link className="btn" to="/login">Sign In</Link>
           </li>
         </ul>
       </nav>
       <div className="nav-btn">
-        <button className="btn" onClick={() => navigate("/signup")}>Sign Up</button>        
-        <button className="btn btn-outline" onClick={() => navigate("/login")}>Sign In</button>
+        <button className="btn btn-outline" onClick={() => navigate("/signup")}>Sign Up</button>        
+        <button className="btn" onClick={() => navigate("/login")}>Sign In</button>
       </div>
       <div className="hamburger" id="hamburger" ref={hamburgerRef}>
         <span></span>

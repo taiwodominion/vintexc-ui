@@ -21,8 +21,8 @@ header {
 }
 
 .logo img {
-  width: 144px;
-  height: 46px;
+  width: 100px;
+  height: 40px;
   display: block;
   object-fit: cover;
 }
@@ -37,6 +37,7 @@ header {
 .navbar a:not(.mobile-signup-btn a){
   color: white;
   text-decoration: none;
+  font-size: 13px;
   font-weight: 500;
   transition: color 0.3s;
   white-space: nowrap;

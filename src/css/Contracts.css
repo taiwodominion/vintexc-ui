@@ -110,7 +110,7 @@
 
 .contract-symbol {
   color: white;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 700;
   margin-bottom: 0.25rem;
   letter-spacing: 0.5px;
@@ -118,7 +118,7 @@
 
 .contract-name {
   color: rgba(255, 255, 255, 0.7);
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   line-height: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;

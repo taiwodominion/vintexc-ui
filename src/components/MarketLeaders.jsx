@@ -38,6 +38,38 @@ const MarketLeaders = () => {
         icon: dogeIcon,
         change: +17.06,
         price: "$0.925",
+      },
+      {
+        id: 1,
+        symbol: "BITCOIN",
+        name: "BITCOIN",
+        icon: BitcoinIcon,
+        change: +14.04,
+        price: "$114.950K",
+      },
+      {
+        id: 2,
+        symbol: "ETHEREUM",
+        name: "ETHERUM",
+        icon: EthereumIcon,
+        change: +43.04,
+        price: "$4.235K",
+      },
+      {
+        id: 3,
+        symbol: "SOLANA",
+        name: "SOLANA",
+        icon: coinsIcon,
+        change: -14.23,
+        price: "$0.348",
+      },
+      {
+        id: 4,
+        symbol: "DOGE",
+        name: "DOGE",
+        icon: dogeIcon,
+        change: +17.06,
+        price: "$0.925",
       }
     ];
   

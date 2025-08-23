@@ -43,6 +43,7 @@
 @media (max-width: 998px) {
     .trade-container {
         flex-direction: column;
+        align-items: center;
         gap: 0;
     }
 
