@@ -1,9 +1,9 @@
-.hero-container {
+/* .hero-container {
   color: white;
   min-height: 100vh;
   padding: 20px;
   overflow-x: hidden;
-}
+} */
 
 .navbar .active a:not(.mobile-signup-btn a) {
   color: #00FFA0;
@@ -14,10 +14,10 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 50px;
+  padding: 30px 50px;
   position: relative;
   z-index: 100;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.479);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.22);
 }
 
 .logo img {
@@ -120,6 +120,10 @@ header {
   .mobile-signup-btn {
     display: block;
     text-align: center;
+    width: 100%;
+  }
+
+  .mobile-signup-btn a {
     width: 100%;
   }
   

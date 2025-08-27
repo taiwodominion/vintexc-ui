@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     padding: 50px 30px;
-    gap: 30px;
+    gap: 20px;
 }
 
 .blog-container h1, p {
@@ -13,22 +13,25 @@
 
 .blog-container p {
     text-align: center;
+    font-size: 14px;
 }
 
 .blog-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    margin-top: 30px;
 }
 
 .blog-box {
-    background: #ffffff0d;
+    background: #00ffa21c;
     border-radius: 20px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
     align-items: center;
+    justify-content: space-between;
     text-align: center;
     width: 320px;
     height: 450px;
@@ -93,5 +96,9 @@
 @media (max-width: 580px) {
     .blog-grid {
         grid-template-columns: 1fr;
+    }
+
+    .blog-box {
+        width: 100%;
     }
 }

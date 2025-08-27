@@ -5,6 +5,7 @@
     flex-direction: column;
     gap: 30px;
     padding: 30px 60px;
+    margin-top: 50px;
 }
 
 .choice-title {
@@ -25,21 +26,29 @@
 .choice-content p {
     color: #ddd;
     text-align: center;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .choice-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(200px, 1fr));
+    /* grid-template-columns: repeat(4, minmax(200px, 1fr)); */
+    grid-template-columns: repeat(4, 1fr);
     gap: 40px;
     padding: 10px;
 }
 
 .box {
     text-align: center;
-    background: #ffffff0d;
-    padding: 30px 30px;
+    background: #00ffa21c;
+    padding: 10px 20px;
     border-radius: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    width: 150px;
+    height: 150px;
 }
 
 .choice-grid p {
@@ -47,8 +56,8 @@
 }
 
 .box img {
-    width: 62px;
-    height: 62px;
+    width: 32px;
+    height: 32px;
 }
 
 @media (max-width: 998px) {
@@ -75,20 +84,29 @@
     }
 
     .box {
-        padding: 20px 10px;
+        width: 120px;
+        height: 120px;
+    }
+
+    /* .box {
+        padding: 10px 10px;
+        height: 100px;
+        height: 130px;
+        display: grid;
+        place-items: center;
     }
 
     .box img {
         width: 50px;
         height: 50px;
-    }
+    } */
 
     .choice-box p {
         font-size: 13px;
     }
 }
 
-@media (max-width: 468px) {
+@media (max-width: 370px) {
     .choice-grid {
         grid-template-columns: 1fr;
     }

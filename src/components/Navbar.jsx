@@ -12,7 +12,6 @@ const Navbar = () => {
   useEffect(() => {
     const hamburger = hamburgerRef.current;
     const navbar = navbarRef.current;
-    // Exclude mobile buttons from navItems to prevent conflict
     const navItems = document.querySelectorAll('.navbar ul li:not(.mobile-signup-btn)');
 
     const handleHamburgerClick = (e) => {
@@ -63,7 +62,6 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    // Exclude mobile buttons from navItems to prevent conflict
     const navItems = document.querySelectorAll('.navbar ul li:not(.mobile-signup-btn)');
     navItems.forEach(item => {
       item.classList.remove('active');
@@ -74,9 +72,7 @@ const Navbar = () => {
     });
   }, [location]);
 
-  // Add this function to handle mobile button clicks
   const handleMobileButtonClick = (path) => {
-    // Close mobile menu if open
     if (navbarRef.current.classList.contains('active')) {
       navbarRef.current.classList.remove('active');
       hamburgerRef.current.classList.remove('active');
@@ -85,7 +81,8 @@ const Navbar = () => {
   };
 
   return (
-    <header>
+    <div className="overlay">
+      <header>
       <a href="#" className="logo">
         <img src={logoImage} alt="Vintexc Logo" />
       </a>
@@ -95,11 +92,9 @@ const Navbar = () => {
           <li className={location.pathname === "/market" ? "active" : ""}><Link to="/market">Market</Link></li>
           <li className={location.pathname === "/support" ? "active" : ""}><Link to="/support">Support</Link></li>
           <li className="mobile-signup-btn">
-            {/* <button className="btn" onClick={() => handleMobileButtonClick("/login")}>Sign Up</button> */}
             <Link className="btn btn-outline" to="/login">Sign Up</Link>
           </li>
           <li className="mobile-signup-btn">
-            {/* <button className="btn btn-outline" onClick={() => handleMobileButtonClick("/login")}>Sign In</button> */}
             <Link className="btn" to="/login">Sign In</Link>
           </li>
         </ul>
@@ -114,6 +109,7 @@ const Navbar = () => {
         <span></span>
       </div>
     </header>
+    </div>
   );
 };
 

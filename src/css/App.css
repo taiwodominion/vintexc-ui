@@ -14,7 +14,13 @@ body {
 }
 
 .overlay {
-    background: rgba(134, 134, 134, 0.062);
+  background: rgba(134, 134, 134, 0.062);
+}
+
+@media (max-width: 600px) {
+  .overlay {
+    background: rgba(134, 134, 134, 0);
+  }
 }
 
 .btn {

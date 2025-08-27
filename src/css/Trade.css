@@ -47,12 +47,26 @@
         gap: 0;
     }
 
-    .trade-container img {
-        width: 80%;
-    }
 
     .trade-content h1 {
         text-align: center;
     }
 
+}
+
+@media (max-width: 600px) {
+    .trade-button {
+        flex-direction: column;
+    }
+
+    .trade-button button {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 400px) {
+    .trade-container img {
+        width: 100%;
+    }
 }
