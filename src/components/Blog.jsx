@@ -2,8 +2,14 @@ import React, { useEffect, useState } from 'react';
 import '../css/Blog.css';
 
 const Blog = () => {
-  const [news, setNews] = useState(null);
+  const [news, setNews] = useState([]);
   const [expandedIndex, setExpandedIndex] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  // const [blogs, setBlogs] = useState([]);
+
+
+  const visibleNews = news.slice(currentIndex, currentIndex + 6);
+
 
   const fetchNews = async () => {
     const requestOptions = {
@@ -17,6 +23,7 @@ const Blog = () => {
         requestOptions
       );
       const data = await res.json();
+      setNews(data);
       return data;
     } catch (error) {
       console.error('Error fetching news:', error);
@@ -49,7 +56,7 @@ const Blog = () => {
 
   const toggleExpand = (index) => {
     console.log('The learn button has been clicked ');
-    setExpandedIndex(expandedIndex === index ? null : index); // Toggle expand/collapse
+    setExpandedIndex(expandedIndex === index ? null : index);
   };
 
   return (
@@ -64,8 +71,10 @@ const Blog = () => {
           new techniques from the world.
         </p>
         <div className="blog-grid">
-          {news &&
-            news.map((item, index) => (
+          
+          {visibleNews &&
+            visibleNews.map((item, index) => (
+              // const realIndex = currentIndex + i;
               <div
                 className={`blog-box ${
                   expandedIndex === index ? 'expanded' : ''
@@ -82,13 +91,23 @@ const Blog = () => {
                     ? item.description
                     : shortenText(item.description, 13)}
                 </p>
-                <img src={item.image} alt="" />
+                <img src={item.image} loading='lazy' alt="Blog Image" />
                 <button id="learn-more-btn" onClick={() => toggleExpand(index)}>
                   {expandedIndex === index ? 'Show Less' : 'Learn More'}
                 </button>
               </div>
             ))}
         </div>
+        <div className="carousel-btn">
+              <button className="prev" onClick={() => setCurrentIndex((prev) => Math.max(prev-4, 0))}
+               disabled={currentIndex === 0} >
+                prev
+              </button>
+              <button className="next" onClick={() => setCurrentIndex((prev) => news && prev + 4 < news.length ? prev + 4 : prev)}
+               disabled={news && currentIndex + 4 >= news.length}>
+                next
+              </button>
+            </div>
       </div>
     </div>
   );

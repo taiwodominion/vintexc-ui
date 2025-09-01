@@ -20,12 +20,12 @@ const Contracts = ({ showCryptoBtn = true }) => {
                      <defs>
                          <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
                          <feDropShadow dx="0" dy="7" 
-                         stdDeviation="7" flood-color="yellow" />
+                         stdDeviation="7" floodColor="yellow" />
                          </filter>
                      </defs>
                      <polyline fill="none"
                      stroke="yellow"
-                     stroke-width="2"
+                     strokeWidth="2"
                      filter="url(#shadow)"
                      points="0,20,20,10,40,15,60,5,80,15,100,10" />
               </svg>
@@ -41,12 +41,12 @@ const Contracts = ({ showCryptoBtn = true }) => {
                      <defs>
                          <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
                          <feDropShadow dx="0" dy="7" 
-                         stdDeviation="7" flood-color="yellow" />
+                         stdDeviation="7" floodColor="yellow" />
                          </filter>
                      </defs>
                      <polyline fill="none"
                      stroke="yellow"
-                     stroke-width="2"
+                     strokeWidth="2"
                      filter="url(#shadow)"
                      points="0,20,20,10,40,15,60,5,80,15,100,10" />
               </svg>
@@ -62,12 +62,12 @@ const Contracts = ({ showCryptoBtn = true }) => {
                      <defs>
                          <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
                          <feDropShadow dx="0" dy="7" 
-                         stdDeviation="7" flood-color="yellow" />
+                         stdDeviation="7" floodColor="yellow" />
                          </filter>
                      </defs>
                      <polyline fill="none"
                      stroke="yellow"
-                     stroke-width="2"
+                     strokeWidth="2"
                      filter="url(#shadow)"
                      points="0,20,20,10,40,15,60,5,80,15,100,10" />
               </svg>
@@ -83,18 +83,18 @@ const Contracts = ({ showCryptoBtn = true }) => {
                      <defs>
                          <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
                          <feDropShadow dx="0" dy="7" 
-                         stdDeviation="7" flood-color="yellow" />
+                         stdDeviation="7" floodColor="yellow" />
                          </filter>
                      </defs>
                      <polyline fill="none"
                      stroke="yellow"
-                     stroke-width="2"
+                     strokeWidth="2"
                      filter="url(#shadow)"
                      points="0,20,20,10,40,15,60,5,80,15,100,10" />
               </svg>
     },
     {
-      id: 1,
+      id: 5,
       symbol: "BITCOIN",
       name: "BITCOIN",
       icon: BitcoinIcon,
@@ -104,18 +104,18 @@ const Contracts = ({ showCryptoBtn = true }) => {
                      <defs>
                          <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
                          <feDropShadow dx="0" dy="7" 
-                         stdDeviation="7" flood-color="yellow" />
+                         stdDeviation="7" floodColor="yellow" />
                          </filter>
                      </defs>
                      <polyline fill="none"
                      stroke="yellow"
-                     stroke-width="2"
+                     strokeWidth="2"
                      filter="url(#shadow)"
                      points="0,20,20,10,40,15,60,5,80,15,100,10" />
               </svg>
     },
     {
-      id: 2,
+      id: 6,
       symbol: "ETHEREUM",
       name: "ETHERUM",
       icon: EthereumIcon,
@@ -125,18 +125,18 @@ const Contracts = ({ showCryptoBtn = true }) => {
                      <defs>
                          <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
                          <feDropShadow dx="0" dy="7" 
-                         stdDeviation="7" flood-color="yellow" />
+                         stdDeviation="7" floodColor="yellow" />
                          </filter>
                      </defs>
                      <polyline fill="none"
                      stroke="yellow"
-                     stroke-width="2"
+                     strokeWidth="2"
                      filter="url(#shadow)"
                      points="0,20,20,10,40,15,60,5,80,15,100,10" />
               </svg>
     },
     {
-      id: 3,
+      id: 7,
       symbol: "SOLANA",
       name: "SOLANA",
       icon: coinsIcon,
@@ -146,18 +146,18 @@ const Contracts = ({ showCryptoBtn = true }) => {
                      <defs>
                          <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
                          <feDropShadow dx="0" dy="7" 
-                         stdDeviation="7" flood-color="yellow" />
+                         stdDeviation="7" floodColor="yellow" />
                          </filter>
                      </defs>
                      <polyline fill="none"
                      stroke="yellow"
-                     stroke-width="2"
+                     strokeWidth="2"
                      filter="url(#shadow)"
                      points="0,20,20,10,40,15,60,5,80,15,100,10" />
               </svg>
     },
     {
-      id: 4,
+      id: 8,
       symbol: "DOGE",
       name: "DOGE",
       icon: dogeIcon,
@@ -167,12 +167,12 @@ const Contracts = ({ showCryptoBtn = true }) => {
                      <defs>
                          <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
                          <feDropShadow dx="0" dy="7" 
-                         stdDeviation="7" flood-color="yellow" />
+                         stdDeviation="7" floodColor="yellow" />
                          </filter>
                      </defs>
                      <polyline fill="none"
                      stroke="yellow"
-                     stroke-width="2"
+                     strokeWidth="2"
                      filter="url(#shadow)"
                      points="0,20,20,10,40,15,60,5,80,15,100,10" />
               </svg>
