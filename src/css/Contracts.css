@@ -69,7 +69,6 @@
 .contract-card {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: space-between;
   padding: 1rem;
   border-radius: 0.75rem;
@@ -111,7 +110,7 @@
 .contract-symbol {
   color: white;
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 0.25rem;
   letter-spacing: 0.5px;
 }
