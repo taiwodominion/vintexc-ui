@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 import '../css/MarketLeaders.css';
 
 const MarketLeaders = () => {
@@ -84,15 +86,63 @@ const MarketLeaders = () => {
     return `${imageBaseUrl}${cleanSymbol}.png`;
   };
 
+  // if (loading) {
+  //   return (
+  //     <div className="overlay">
+  //       <div className="loading-container">
+  //         <div className="circle"></div>
+  //         <p>Loading please wait..</p>
+  //       </div>
+  //     </div>
+  //   );
+  // }
+
   if (loading) {
-    return (
-      <div className="overlay">
-        <div className="loading-container">
-          <p>Loading market data...</p>
+  return (
+    <div className="overlay">
+      <section className="market-leaders-container">
+        <div className="market-leaders-grid">
+          {[...Array(2)].map((_, columnIndex) => (
+            <div className="markets-list" key={columnIndex}>
+              <h2><Skeleton width={120} height={20} baseColor='#dddddd46'/></h2>
+              {[...Array(4)].map((_, i) => (
+                <div key={i} className="market-card">
+                  <div className="market-info">
+                    <Skeleton circle width={40} height={40} baseColor='#dddddd46'/>
+                    <div className="market-details">
+                      <p className="market-symbol">
+                        <Skeleton width={80} baseColor='#dddddd46'/>
+                      </p>
+                      <p className="market-name">
+                        <Skeleton width={120} baseColor='#dddddd46'/>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="market-metric">
+                    <p className="metric-label">Change</p>
+                    <p className="metric-value">
+                      <Skeleton width={60} baseColor='#dddddd46'/>
+                    </p>
+                  </div>
+                  <div className="market-metric">
+                    <p className="metric-label">Price</p>
+                    <p className="metric-value price-value">
+                      <Skeleton width={70} baseColor='#dddddd46'/>
+                    </p>
+                  </div>
+                  <div className="action-trade-container">
+                    <Skeleton height={32} width={80} borderRadius={10} baseColor='#dddddd46' />
+                  </div>
+                </div>
+              ))}
+            </div>
+          ))}
         </div>
-      </div>
-    );
-  }
+      </section>
+    </div>
+  );
+}
+
 
   if (error) {
     return (

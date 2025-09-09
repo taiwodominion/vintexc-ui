@@ -126,6 +126,7 @@ const Contracts = ({ showCryptoBtn = true }) => {
                         <img
                           alt={contract.name}
                           className="contract-icon"
+                          loading='lazy'
                           src={imageUrl}
                           onError={(e) => {
                             e.target.style.display = 'none';

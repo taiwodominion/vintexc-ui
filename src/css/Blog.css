@@ -102,32 +102,14 @@ p {
 .carousel-btn button {
   display: inline-block;
   padding: 12px 28px;
-  background: #00FFA0;
-  color: #000;
+  background: #12493562;
+  color: #00ffa0;
   border-radius: 5px;
-  transform: skew(-25deg);
   font-weight: 600;
-  transition: all 0.3s ease;
-  border: none;
+  border: 1px solid #00ffa0;
   cursor: pointer;
   font-size: 1rem;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.carousel-btn button:hover {
-  transform: scale(1.04) skew(-30deg);
-}
-
-.carousel-btn button:last-child {
-  background: transparent;
-  border: 2px solid #00FFA0;
-  color: #00FFA0;
-}
-
-.carousel-btn button:last-child:hover {
-  background: #00FFA0;
-  color: #000;
+  outline: none;
 }
 
 @media (max-width: 998px) {
