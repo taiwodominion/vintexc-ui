@@ -89,18 +89,32 @@
   margin-bottom: 0.5rem;
 }
 
-.contract-info img {
-  width: 32px;
-  height: 32px;
+.coin-image {
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
+.contract-info img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+/* .contract-info img {
+  width: 32px;
+  height: 32px;
+} */
+/* 
 .contract-icon {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid rgba(255, 255, 255, 0.1);
-}
+} */
 
 .contract-details {
   display: flex;

@@ -215,6 +215,10 @@
   padding-bottom: 4.5rem;
 }
 
+.error-message {
+  color: rgb(255, 8, 0);
+}
+
 .register-button {
   cursor: pointer;
   background-color: rgb(0, 255, 160);

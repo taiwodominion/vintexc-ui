@@ -123,7 +123,8 @@ const Contracts = ({ showCryptoBtn = true }) => {
                   return (
                     <div key={contract.id} className="contract-card">
                       <div className="contract-info">
-                        <img
+                        <div className="coin-image">
+                          <img
                           alt={contract.name}
                           className="contract-icon"
                           loading='lazy'
@@ -136,6 +137,8 @@ const Contracts = ({ showCryptoBtn = true }) => {
                             e.target.parentNode.appendChild(fallbackDiv);
                           }}
                         />
+                        </div>
+                        
                         <div className="contract-details">
                           <p className="contract-symbol">{symbol}</p>
                           <p className="contract-name">{contract.name}</p>

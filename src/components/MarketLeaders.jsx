@@ -16,8 +16,6 @@ const MarketLeaders = () => {
       const myHeaders = new Headers();
       myHeaders.append('Cookie', 'PHPSESSID=b2fea1676fc3ff7a2a6706c4037308c7');
 
-
-
       
       try {
         setLoading(true);

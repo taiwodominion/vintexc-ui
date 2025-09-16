@@ -153,7 +153,7 @@ const Blog = () => {
         setNews(result.data);
         console.log('News fetched successfully');
       }
-      setLoading(false); // ← stop loading after fetch
+      setLoading(false);
     };
 
     loadNews();
