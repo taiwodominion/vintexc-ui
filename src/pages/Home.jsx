@@ -7,22 +7,28 @@ import About from '../components/About';
 import Choice from '../components/Choice';
 import Trade from '../components/Trade';
 import Blog from '../components/Blog';
-import Action from '../components/Action'
-import Footer from '../components/Footer'
+import Action from '../components/Action';
+import Footer from '../components/Footer';
 
 const Home = () => {
   return (
     <div className="home">
-      <Navbar />
-      <Hero />
-      <Announcement />
-      <Contracts />
-      <About />
-      <Choice />
-      <Trade />
-      <Blog />
-      <Action />
-      <Footer />
+      <nav>
+        <Navbar />
+      </nav>
+      <main>
+        <Hero />
+        <Announcement />
+        <Contracts />
+        <About />
+        <Choice />
+        <Trade />
+        <Blog />
+        <Action />
+      </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 };

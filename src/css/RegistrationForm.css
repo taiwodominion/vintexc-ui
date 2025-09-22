@@ -189,11 +189,11 @@
   border: 2px solid rgba(0, 255, 160, 0.3);
   border-radius: 0.25rem;
 }
-
+/* 
 .terms-checkbox:focus {
   ring: 2px;
   ring-color: rgb(0, 255, 160);
-}
+} */
 
 .terms-label {
   color: rgba(255, 255, 255, 0.75);
@@ -260,6 +260,22 @@
   border-radius: 0.75rem;
   border: none;
 }
+
+.otp-status-card {
+  position: absolute;
+  right: 0;
+  background: #00ffa248;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  border: 1px solid #00ffa2c4;
+  font-weight: bold;
+  text-align: center;
+  color: #00FFA0;
+  width: 250px;
+}
+
 
 @media (min-width: 640px) {
   .login-button {

@@ -6,9 +6,15 @@ import ForgotPasswordForm from '../components/ForgotPasswordForm'
 const ForgotPassword = () => {
   return (
     <div>
+      <nav>
         <Navbar />
+      </nav>
+      <main>
         <ForgotPasswordForm />
+      </main>
+      <footer>
         <Footer />
+      </footer>
     </div>
   )
 }

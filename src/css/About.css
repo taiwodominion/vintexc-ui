@@ -53,4 +53,8 @@
         max-width: 250px;
         height: 250px;
     }
+
+    .about-container {
+        padding: 50px 30px;
+    }
 }

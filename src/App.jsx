@@ -5,6 +5,8 @@ import Support from "./pages/Support"
 import Signup from "./pages/Signup"
 import Login from "./pages/Login"
 import ForgotPassword from './pages/ForgotPassword'
+import EnterOtp from "./pages/EnterOtp"
+import Assets from "./pages/Assets"
 import './css/App.css'
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
         <Route path="/signup" element={<Signup />}/>
         <Route path="/login" element={<Login />}/>
         <Route path="/forgotpassword" element={<ForgotPassword />}/>
+        <Route path="/enter-otp" element={<EnterOtp />} />
+        <Route path="/assets" element={<Assets />} />
       </Routes>
   )
 }

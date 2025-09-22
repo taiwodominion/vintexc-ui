@@ -7,9 +7,15 @@ import Footer from '../components/Footer'
 const Login = () => {
   return (
     <div>
+      <nav>
         <Navbar />
+      </nav>
+      <main>
         <LoginForm />
+      </main>
+      <footer>
         <Footer />
+      </footer>
     </div>
   )
 }

@@ -7,9 +7,15 @@ import Footer from '../components/Footer'
 const Signup = () => {
   return (
     <div>
+      <nav>
         <Navbar />
+      </nav>
+      <main>
         <RegistrationForm />
+      </main>
+      <footer>
         <Footer />
+      </footer>
     </div>
   )
 }
