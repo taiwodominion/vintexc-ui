@@ -114,8 +114,7 @@ const OtpForm = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // ✅ safely get values passed from LoginForm
-  const identity = location.state?.identity; // ✅ now matches
+  const identity = location.state?.identity;
   const password = location.state?.password;
 
   const OTP_LENGTH = 6;
@@ -141,41 +140,44 @@ const OtpForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const otpCode = otp.join('');
-
-    console.log('OTP Entered:', otpCode);
 
     const myHeaders = new Headers();
     myHeaders.append('Content-Type', 'application/json');
+    myHeaders.append('Cookie', 'PHPSESSID=1fb2e584b1527d603541bdcedd62e6c9');
 
-    // ✅ send correct payload to backend
     const raw = JSON.stringify({
       identity: identity,
       password: password,
-      otp: otpCode || '000000', // fallback to hardcoded if input empty
+      otp: otp.join(''),
     });
 
+    const requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow',
+    };
+
     try {
-      const res = await fetch(
+      const response = await fetch(
         'https://api.vintexc.com/apps/auth/login/validate_login',
-        {
-          method: 'POST',
-          headers: myHeaders,
-          body: raw,
-        }
+        requestOptions
       );
 
-      const data = await res.json();
-      console.log('OTP validation:', data);
+      const result = await response.json();
+      console.log('OTP validation response:', result);
 
-      if (data.status === 'success') {
+      if (result?.data?.jwt_token) {
+        console.log('JWT Token found:', result.data.jwt_token);
+
+        localStorage.setItem('token', result.data.jwt_token);
+
         navigate('/assets');
       } else {
-        alert(data.message || 'Invalid OTP');
+        console.error('No jwt_token found. Response was:', result);
       }
-    } catch (error) {
-      console.error(error);
-      alert('Network error, please try again.');
+    } catch (err) {
+      console.error('Error verifying OTP:', err);
     }
   };
 
