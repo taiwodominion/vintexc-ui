@@ -129,5 +129,7 @@ header {
   
   .hamburger {
     display: flex;
+    background: transparent;
+    border: none;
   }
 }

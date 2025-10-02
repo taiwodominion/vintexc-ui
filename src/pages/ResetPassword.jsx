@@ -1,16 +1,16 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import AssetInfo from '../components/AssetInfo'
+import ResetPasswordForm from '../components/ResetPasswordForm'
 import Footer from '../components/Footer'
 
-const Assets = () => {
+const ResetPassword = () => {
   return (
-    <div className="home">
+    <div>
       <nav>
         <Navbar />
       </nav>
       <main>
-        <AssetInfo />
+        <ResetPasswordForm />
       </main>
       <footer>
         <Footer />
@@ -19,4 +19,4 @@ const Assets = () => {
   )
 }
 
-export default Assets
+export default ResetPassword

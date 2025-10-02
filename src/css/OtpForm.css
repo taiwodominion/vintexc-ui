@@ -147,6 +147,12 @@
   padding-bottom: 2.25rem;
 }
 
+.otp-container strong {
+  color: #00ffa0;
+  font-size: 12px;
+  font-weight: 400;
+}
+
 .otp-form {
   display: flex;
   flex-direction: column;

@@ -6,6 +6,7 @@ import Signup from "./pages/Signup"
 import Login from "./pages/Login"
 import ForgotPassword from './pages/ForgotPassword'
 import EnterOtp from "./pages/EnterOtp"
+import ResetPassword from "./pages/ResetPassword"
 import Assets from "./pages/Assets"
 import './css/App.css'
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/login" element={<Login />}/>
         <Route path="/forgotpassword" element={<ForgotPassword />}/>
         <Route path="/enter-otp" element={<EnterOtp />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/assets" element={<Assets />} />
       </Routes>
   )

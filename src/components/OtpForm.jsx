@@ -1,112 +1,4 @@
-// import React, { useState, useRef } from "react";
-// import { useNavigate, useLocation } from "react-router-dom";
-// import "../css/OtpForm.css";
-
-// const OtpForm = () => {
-//   const navigate = useNavigate();
-//   const location = useLocation();
-
-//   // ✅ get identity (username/email) passed from LoginForm
-//   const identity = location.state?.identifier;
-//   const password = location.state?.password;
-
-//   const OTP_LENGTH = 6;
-//   const [otp, setOtp] = useState(new Array(OTP_LENGTH).fill(""));
-//   const inputsRef = useRef([]);
-
-//   const handleChange = (value, index) => {
-//     if (!/^[0-9]?$/.test(value)) return;
-//     const newOtp = [...otp];
-//     newOtp[index] = value;
-//     setOtp(newOtp);
-
-//     if (value && index < OTP_LENGTH - 1) {
-//       inputsRef.current[index + 1].focus();
-//     }
-//   };
-
-//   const handleKeyDown = (e, index) => {
-//     if (e.key === "Backspace" && !otp[index] && index > 0) {
-//       inputsRef.current[index - 1].focus();
-//     }
-//   };
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     const otpCode = otp.join("");
-
-//     console.log("OTP Entered:", otpCode);
-
-//     const myHeaders = new Headers();
-//     myHeaders.append("Content-Type", "application/json");
-
-//     // const raw = JSON.stringify({
-//     //   identity: identity,
-//     //   token: otpCode,
-//     // });
-
-//     const raw = JSON.stringify({
-//       identity: identity,
-//       password: password,
-//       otp: '000000'
-//     });
-
-//     try {
-//       const res = await fetch(
-//         "https://api.vintexc.com/apps/auth/login/validate_login",
-//         {
-//           method: "POST",
-//           headers: myHeaders,
-//           body: raw,
-//         }
-//       );
-
-//       const data = await res.json();
-//       console.log("OTP validation:", data);
-
-//       if (data.status === "success") {
-//         navigate("/dashboard"); // ✅ success → go to dashboard
-//       } else {
-//         alert(data.message || "Invalid OTP");
-//       }
-//     } catch (error) {
-//       console.error(error);
-//       alert("Network error, please try again.");
-//     }
-//   };
-
-//   return (
-//     <main className="otp-container">
-//       <h2>Enter Verification Code</h2>
-//       <p>We sent a code to <strong>{identity}</strong></p>
-
-//       <form onSubmit={handleSubmit} className="otp-form">
-//         <div className="otp-inputs">
-//           {otp.map((digit, index) => (
-//             <input
-//               key={index}
-//               type="text"
-//               maxLength="1"
-//               value={digit}
-//               ref={(el) => (inputsRef.current[index] = el)}
-//               onChange={(e) => handleChange(e.target.value, index)}
-//               onKeyDown={(e) => handleKeyDown(e, index)}
-//               className="otp-input"
-//             />
-//           ))}
-//         </div>
-
-//         <button type="submit" className="verify-btn">
-//           Verify OTP
-//         </button>
-//       </form>
-//     </main>
-//   );
-// };
-
-// export default OtpForm;
-
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import '../css/OtpForm.css';
 
@@ -114,12 +6,20 @@ const OtpForm = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const identity = location.state?.identity;
-  const password = location.state?.password;
-
-  const OTP_LENGTH = 6;
-  const [otp, setOtp] = useState(new Array(OTP_LENGTH).fill(''));
+  const { flow, identity, password, email } = location.state || {};
+  const [otp, setOtp] = useState(new Array(6).fill(''));
+  const [otpStatus, setOtpStatus] = useState('');
+  const [loading, setLoading] = useState(false);
   const inputsRef = useRef([]);
+  const timeoutRef = useRef(null);
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
   const handleChange = (value, index) => {
     if (!/^[0-9]?$/.test(value)) return;
@@ -127,7 +27,7 @@ const OtpForm = () => {
     newOtp[index] = value;
     setOtp(newOtp);
 
-    if (value && index < OTP_LENGTH - 1) {
+    if (value && index < 5) {
       inputsRef.current[index + 1]?.focus();
     }
   };
@@ -140,44 +40,100 @@ const OtpForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const otpCode = otp.join('');
+    
+    if (otpCode.length !== 6) {
+      setOtpStatus('Please enter complete 6-digit OTP');
+      timeoutRef.current = setTimeout(() => setOtpStatus(''), 3000);
+      return;
+    }
+
+    setLoading(true);
+    setOtpStatus('');
+
+    // Clear any existing timeout
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
 
     const myHeaders = new Headers();
     myHeaders.append('Content-Type', 'application/json');
-    myHeaders.append('Cookie', 'PHPSESSID=1fb2e584b1527d603541bdcedd62e6c9');
-
-    const raw = JSON.stringify({
-      identity: identity,
-      password: password,
-      otp: otp.join(''),
-    });
-
-    const requestOptions = {
-      method: 'POST',
-      headers: myHeaders,
-      body: raw,
-      redirect: 'follow',
-    };
 
     try {
-      const response = await fetch(
-        'https://api.vintexc.com/apps/auth/login/validate_login',
-        requestOptions
-      );
+      if (flow === 'login') {
+        // ✅ Login OTP validation
+        const raw = JSON.stringify({
+          identity: identity,
+          password: password,
+          otp: otpCode,
+        });
 
-      const result = await response.json();
-      console.log('OTP validation response:', result);
+        const response = await fetch(
+          'https://api.vintexc.com/apps/auth/login/validate_login',
+          {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+          }
+        );
 
-      if (result?.data?.jwt_token) {
-        console.log('JWT Token found:', result.data.jwt_token);
+        const result = await response.json();
+        console.log('OTP validation response:', result);
 
-        localStorage.setItem('token', result.data.jwt_token);
+        if (result.status === 'success' && result.data?.jwt_token) {
+          localStorage.setItem('token', result.data.jwt_token);
+          // Clear timeout before navigating
+          if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+          }
+          navigate('/assets');
+        } else {
+          setOtpStatus(result.message || 'Invalid OTP. Please try again.');
+          timeoutRef.current = setTimeout(() => setOtpStatus(''), 3000);
+        }
+      } else if (flow === 'forgotPassword') {
+        // ✅ Forgot Password OTP validation
+        const raw = JSON.stringify({
+          email: email,
+          token: otpCode, // ✅ Note: API uses 'token' not 'otp'
+        });
 
-        navigate('/assets');
-      } else {
-        console.error('No jwt_token found. Response was:', result);
+        const response = await fetch(
+          'https://api.vintexc.com/apps/auth/forgot_password/validate_reset_code',
+          {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+          }
+        );
+
+        const result = await response.json();
+        console.log('Reset OTP validation response:', result);
+
+        if (result.status === 'success') {
+          // ✅ Navigate to reset password page
+          // Clear timeout before navigating
+          if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+          }
+          navigate('/reset-password', { 
+            state: { 
+              email: email,
+              token: otpCode 
+            } 
+          });
+        } else {
+          setOtpStatus(result.message || 'Invalid OTP. Please try again.');
+          timeoutRef.current = setTimeout(() => setOtpStatus(''), 3000);
+        }
       }
     } catch (err) {
       console.error('Error verifying OTP:', err);
+      setOtpStatus('Network error. Please try again.');
+      timeoutRef.current = setTimeout(() => setOtpStatus(''), 3000);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -185,8 +141,15 @@ const OtpForm = () => {
     <main className="otp-container">
       <h2>Enter Verification Code</h2>
       <p>
-        We sent a code to <strong>{identity}</strong>
+        We sent a code to <strong>{flow === 'login' ? identity : email}</strong>
       </p>
+
+      {/* OTP Status Display - similar to your other forms */}
+      {otpStatus && (
+        <div className="otp-status-card">
+          {otpStatus === 'loading' ? 'Loading...' : otpStatus}
+        </div>
+      )}
 
       <form onSubmit={handleSubmit} className="otp-form">
         <div className="otp-inputs">
@@ -200,12 +163,13 @@ const OtpForm = () => {
               onChange={(e) => handleChange(e.target.value, index)}
               onKeyDown={(e) => handleKeyDown(e, index)}
               className="otp-input"
+              disabled={loading}
             />
           ))}
         </div>
 
-        <button type="submit" className="verify-btn">
-          Verify OTP
+        <button type="submit" className="verify-btn" disabled={loading}>
+          {loading ? 'Verifying...' : 'Verify OTP'}
         </button>
       </form>
     </main>

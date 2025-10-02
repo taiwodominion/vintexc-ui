@@ -261,7 +261,7 @@
   border: none;
 }
 
-.otp-status-card {
+/* .otp-status-card {
   position: absolute;
   right: 0;
   background: #00ffa248;
@@ -274,7 +274,7 @@
   text-align: center;
   color: #00FFA0;
   width: 250px;
-}
+} */
 
 
 @media (min-width: 640px) {
