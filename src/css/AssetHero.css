@@ -1,0 +1,501 @@
+.asset-hero {
+  padding: 36px 16px 8px 16px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.asset-hero-header {
+  margin-bottom: 16px;
+}
+
+.asset-hero-title {
+  color: white;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.asset-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: stretch;
+}
+
+/* Left Column Styles */
+.asset-hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Hero Section */
+.asset-hero-main {
+  width: 100%;
+  display: flex;
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+  background-image: linear-gradient(
+    45deg,
+    rgb(16, 20, 40) 10%,
+    rgb(0, 255, 160)
+  );
+}
+
+.asset-hero-content {
+  position: relative;
+  padding: 20px;
+  max-width: 250px;
+  flex: 1;
+}
+
+.asset-hero-subtitle {
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  margin: 0;
+}
+
+.asset-hero-heading {
+  color: white;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 32px;
+  margin: 0;
+}
+
+.asset-hero-description {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  margin-top: 16px;
+  margin: 16px 0 0 0;
+}
+
+.asset-hero-button {
+  cursor: pointer;
+  background-color: #00ffa0;
+  color: #101428;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 8px;
+  height: 39px;
+  width: 170px;
+  margin-top: 16px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.asset-hero-button:hover {
+  background-color: #00e691;
+}
+
+.asset-hero-graphics {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  margin-left: -23.5px;
+}
+
+.asset-hero-graphics img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.asset-hero-image-main {
+  position: absolute;
+  top: -5%;
+}
+
+.asset-hero-image-sphere {
+  position: absolute;
+  top: 159px;
+  left: 0;
+}
+
+.asset-hero-image-pill {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  position: absolute;
+  bottom: 36px;
+}
+
+.asset-hero-image-toroid {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  position: absolute;
+  bottom: 140px;
+  left: 60px;
+}
+
+.asset-hero-image-cube {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  position: absolute;
+  bottom: 162.5px;
+  left: 202px;
+}
+
+.asset-hero-image-white {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  position: absolute;
+  top: 155px;
+  left: 202px;
+}
+
+/* Asset Cards Section */
+.asset-hero-cards {
+  background-color: #261e35;
+  padding: 20px;
+  border-radius: 0 0 16px 16px;
+  position: relative;
+  flex-grow: 1;
+}
+
+.asset-hero-cards-container {
+  position: relative;
+  margin: 0 48px;
+}
+
+.asset-hero-cards-wrapper {
+  overflow: hidden;
+}
+
+.asset-hero-cards-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.asset-hero-card {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: #3c354a;
+  height: 120px;
+  padding: 20px;
+  border-radius: 16px;
+  min-width: 100%;
+  flex-shrink: 0;
+}
+
+.asset-hero-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.asset-hero-card-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.asset-hero-card-price {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.asset-hero-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.asset-hero-card-pair {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.asset-hero-card-symbol {
+  color: #868b93;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.asset-hero-card-exchange {
+  color: #868b93;
+  width: 17px;
+  height: 17px;
+}
+
+.asset-hero-card-change {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.asset-hero-change-icon {
+  font-size: 17px;
+}
+
+.asset-hero-change-icon.asset-hero-change-positive {
+  color: #00c287;
+}
+
+.asset-hero-change-icon.asset-hero-change-negative {
+  color: #ff4747;
+}
+
+.asset-hero-change-text {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.asset-hero-change-text.asset-hero-change-positive {
+  color: #00c287;
+}
+
+.asset-hero-change-text.asset-hero-change-negative {
+  color: #ff4747;
+}
+
+.asset-hero-nav-button {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: #3c354a;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  padding: 8px;
+  color: white;
+  transition: background-color 0.3s ease;
+  border: none;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.asset-hero-nav-button:hover {
+  background-color: #4a415a;
+}
+
+.asset-hero-nav-prev {
+  left: -48px;
+}
+
+.asset-hero-nav-next {
+  right: -48px;
+}
+
+.asset-hero-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+  gap: 8px;
+}
+
+.asset-hero-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.asset-hero-dot:hover {
+  transform: scale(1.25);
+}
+
+.asset-hero-dot-active {
+  background-color: white;
+}
+
+/* Assets Valuation Section */
+.asset-hero-valuation {
+  background-color: #101428;
+  border: 1px solid rgba(0, 255, 160, 0.15);
+  border-radius: 16px;
+  padding: 20px 16px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.asset-hero-valuation-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.asset-hero-valuation-title {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.asset-hero-view-icon {
+  color: #898c97;
+  font-size: 18px;
+}
+
+.asset-hero-valuation-amount {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 44px;
+}
+
+.asset-hero-amount {
+  color: white;
+  font-size: 33px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.asset-hero-currency {
+  color: white;
+  font-size: 13px;
+  font-weight: 400;
+  margin: 0 0 4px 0;
+}
+
+.asset-hero-earnings {
+  margin-bottom: 48px;
+}
+
+.asset-hero-earnings-label {
+  color: white;
+  font-size: 13px;
+  font-weight: 400;
+  margin: 0 0 6px 0;
+}
+
+.asset-hero-earnings-value {
+  color: #00ffa0;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.asset-hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.asset-hero-action-icon {
+  width: 100px;
+  height: 90px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.asset-hero-action-icon:hover {
+  transform: scale(1.05);
+}
+
+/* Transactions Section */
+.asset-hero-transactions {
+  background-color: #101428;
+  border: 1px solid rgba(0, 255, 160, 0.15);
+  border-radius: 16px;
+  padding: 20px 16px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.asset-hero-transactions-title {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  flex-shrink: 0;
+}
+
+.asset-hero-transactions-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  min-height: 0;
+}
+
+.asset-hero-empty-icon {
+  width: 100px;
+  height: 120px;
+  object-fit: contain;
+}
+
+.asset-hero-empty-text {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .asset-hero {
+    padding: 36px 48px 8px 48px;
+  }
+
+  .asset-hero-grid {
+    grid-template-columns: 43% 30% 25%;
+  }
+
+  .asset-hero-actions {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 767px) {
+  .asset-hero-main {
+    flex-direction: column;
+  }
+
+  .asset-hero-graphics {
+    justify-content: center;
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .asset-hero-image-main {
+    margin-left: 0;
+  }
+
+  .asset-hero-cards-container {
+    margin: 0 24px;
+  }
+
+  .asset-hero-nav-prev {
+    left: -32px;
+  }
+
+  .asset-hero-nav-next {
+    right: -32px;
+  }
+
+  .asset-hero-actions {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .asset-hero-action-icon {
+    width: 80px;
+    height: 72px;
+  }
+}

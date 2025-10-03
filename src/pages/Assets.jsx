@@ -1,16 +1,20 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import AssetInfo from '../components/AssetInfo'
+import AssetHero from '../components/AssetHero'
+import AssetQuickAccess from '../components/AssetQuickAccess'
+import AssetTable from '../components/AssetTable'
 import Footer from '../components/Footer'
 
 const Assets = () => {
   return (
-    <div className="home">
+    <div className="asset">
       <nav>
         <Navbar />
       </nav>
       <main>
-        <AssetInfo />
+        <AssetHero />
+        <AssetQuickAccess />
+        <AssetTable />
       </main>
       <footer>
         <Footer />

@@ -1,72 +1,69 @@
 .trade-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
-    padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  padding: 30px;
 }
 
 .trade-container img {
-    width: 400px;
-    height: 250px;
-    display: block;
-    object-fit: contain;
+  width: 400px;
+  height: 250px;
+  display: block;
+  object-fit: contain;
 }
 
 .trade-content {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .trade-content h1 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
-.trade-content h1 ,
+.trade-content h1,
 .trade-content span {
-    color: #00FFA0;
+  color: #00ffa0;
 }
 
 .trade-content p {
-    text-align: center;
-    font-size: 14px;
+  text-align: center;
+  font-size: 14px;
 }
 
 .trade-button {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-top: 20px;
 }
 
 @media (max-width: 998px) {
-    .trade-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 0;
-    }
+  .trade-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
 
-
-    .trade-content h1 {
-        text-align: center;
-    }
-
+  .trade-content h1 {
+    text-align: center;
+  }
 }
 
 @media (max-width: 600px) {
-    .trade-button {
-        flex-direction: column;
-    }
+  .trade-button {
+    flex-direction: column;
+  }
 
-    .trade-button button {
-        width: 100%;
-    }
+  .trade-button button {
+    width: 100%;
+  }
 }
 
-
 @media (max-width: 400px) {
-    .trade-container img {
-        width: 100%;
-    }
+  .trade-container img {
+    width: 100%;
+  }
 }
