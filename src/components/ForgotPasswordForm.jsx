@@ -54,6 +54,7 @@ const ForgotPasswordForm = () => {
     });
 
     try {
+      setOtpStatus('Loading...')
       const response = await fetch(
         'https://api.vintexc.com/apps/auth/forgot_password/forgot_password',
         {

@@ -62,9 +62,6 @@ const Footer = () => {
             </a> */}
             {/* <img src={microsoftImg} alt="" /> */}
             <img src={appleStoreImg} alt="" />
-            <a hrwf="">
-              <img src={twitterImg} alt="" />
-            </a>
         </div>
       </div>
     </footer>

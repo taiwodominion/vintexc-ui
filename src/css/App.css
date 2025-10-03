@@ -124,6 +124,7 @@ body::-webkit-scrollbar-thumb {
 
 @media (max-width: 468px) {
   .otp-status-card {
+    top: 7%;
     padding: 5px 8px;
     border-radius: 3px;
     font-weight: bold;

@@ -12,8 +12,7 @@ import '../css/RegistrationForm.css';
 const RegistrationForm = () => {
   const navigate = useNavigate();
 
-  // 🚩 DEV flag for OTP bypass
-  const DEV_BYPASS_OTP = true;
+  const DEV_BYPASS_OTP = false;
 
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
@@ -283,6 +282,7 @@ const RegistrationForm = () => {
     };
 
     try {
+      setOtpStatus('loading...');
       const res = await fetch(
         'https://api.vintexc.com/apps/auth/register/register',
         requestOptions
@@ -292,6 +292,7 @@ const RegistrationForm = () => {
       console.log('Register User acct:', data);
       setOtpStatus(data.message || 'Registration complete');
       setTimeout(() => setOtpStatus(''), 3000);
+      navigate('/login');
     } catch (error) {
       console.log(error);
       setOtpStatus('Network error, please try again');

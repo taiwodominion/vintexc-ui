@@ -1,105 +1,10 @@
-/* .verify-email-container {
-  flex: 1;
-}
-
-.verify-email-content {
-  padding: 1.5rem 1rem;
-}
-
-.back-button {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 14px;
-  background: none;
-  border: none;
-  transition: all 0.3s ease;
-  padding: 0.5rem 0;
-}
-
-.back-button:hover {
-  color: #00FFA0;
-  transform: translateX(-5px);
-}
-
-.back-icon {
-  color: #00FFA0;
-  font-size: 16px;
-}
-
-.verify-email-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 50px;
-}
-
-.verify-form-group {
-    display: flex;
-    gap: 30px;
-}
-
-.verify-form-group input {
-    width: 80px;
-    height: 80px;
-    border-radius: 20px;
-    text-align: center;
-    outline: none;
-    border: none;
-    font-size: 1.3rem;
-}
-
-.verify-email-btn {
-  cursor: pointer;
-  background-color: #00FFA0;
-  color: #101428;
-  font-size: 15px;
-  font-weight: 600;
-  width: 100%;
-  height: 2.75rem;
-  border-radius: 0.75rem;
-  margin-bottom: 1.5rem;
-  border: none;
-  transition: all 0.3s ease;
-}
-
-.verify-email-btn:hover {
-  background-color: #00e691;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 255, 160, 0.2);
-}
-
-.verify-email-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-@media (max-width: 768px) {
-    .verify-form-group input {
-        width: 50px;
-        height: 50px;
-        border-radius: 5px;
-    }
-}
-
-@media (max-width: 568px) {
-    .verify-form-group {
-        gap: 20px;
-    }
-
-    .verify-form-group input {
-        width: 30px;
-        height: 30px;
-        border-radius: 3px;
-    }
-} */
-
 .otp-container {
   flex: 1;
-  padding: 1.5rem 1rem;
+  padding: 5rem 1rem;
+}
+
+.otp-status-card {
+  top: 20%;
 }
 
 .back-button {
@@ -166,13 +71,18 @@
 }
 
 .otp-inputs input {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border-radius: 20px;
   text-align: center;
   outline: none;
   border: none;
   font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.otp-inputs input:focus {
+  outline:#00e691 2px solid;
 }
 
 .verify-btn {
@@ -181,7 +91,7 @@
   color: #101428;
   font-size: 15px;
   font-weight: 600;
-  width: 100%;
+  width: 50%;
   height: 2.75rem;
   border-radius: 0.75rem;
   margin-bottom: 1.5rem;
@@ -198,6 +108,10 @@
 .verify-btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+.otp-timer {
+  color: #00e691;
 }
 
 @media (max-width: 768px) {

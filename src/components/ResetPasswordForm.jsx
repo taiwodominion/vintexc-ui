@@ -16,7 +16,7 @@ const ResetPasswordForm = () => {
   const [loading, setLoading] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-  const [canResend, setCanResend] = useState(true);
+  // const [canResend, setCanResend] = useState(true);
   const [cooldown, setCooldown] = useState(0);
   const cooldownRef = useRef(null);
   const timeoutRef = useRef(null);
@@ -118,52 +118,6 @@ const ResetPasswordForm = () => {
     };
   }, [cooldown]);
 
-  const handleResendCode = async () => {
-    if (!canResend) return;
-
-    setLoading(true);
-    setOtpStatus('');
-
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-      timeoutRef.current = null;
-    }
-
-    const myHeaders = new Headers();
-    myHeaders.append('Content-Type', 'application/json');
-
-    const raw = JSON.stringify({
-      email: email,
-      device: 'Browser',
-    });
-
-    try {
-      const response = await fetch(
-        'https://api.vintexc.com/apps/auth/forgot_password/forgot_password',
-        {
-          method: 'POST',
-          headers: myHeaders,
-          body: raw,
-        }
-      );
-
-      const data = await response.json();
-
-      if (data.status === 'success') {
-        setOtpStatus('Verification code resent successfully');
-        setCanResend(false);
-        setCooldown(60);
-      } else {
-        setOtpStatus(data.message || 'Failed to resend code');
-      }
-    } catch (err) {
-      setOtpStatus('Network error. Please try again');
-    } finally {
-      setLoading(false);
-      timeoutRef.current = setTimeout(() => setOtpStatus(''), 3000);
-    }
-  };
-
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
@@ -243,6 +197,8 @@ const ResetPasswordForm = () => {
           </button>
         </form>
 
+        <p className='remember-text'>Remember your password ?</p>
+
         <button
           className="back-login-btn"
           type="button"
@@ -250,18 +206,6 @@ const ResetPasswordForm = () => {
         >
           Back to Login
         </button>
-
-        <p className="resend-text">
-          Didn't receive the code?{' '}
-          <span
-            className={`resend-link ${!canResend ? 'disabled' : ''}`}
-            onClick={handleResendCode}
-            disabled={!canResend || loading}
-          >
-            {/* Resend OTP */}
-            {canResend ? 'Resend Code' : `Resend in ${cooldown}s`}
-          </span>
-        </p>
       </div>
     </main>
   );
