@@ -55,6 +55,7 @@ const LoginForm = () => {
     });
 
     try {
+      setOtpStatus('Loading...');
       const res = await fetch('https://api.vintexc.com/apps/auth/login/login', {
         method: 'POST',
         headers: myHeaders,
