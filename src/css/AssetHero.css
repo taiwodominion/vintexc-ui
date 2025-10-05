@@ -22,14 +22,12 @@
   align-items: stretch;
 }
 
-/* Left Column Styles */
 .asset-hero-left {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-/* Hero Section */
 .asset-hero-main {
   width: 100%;
   display: flex;
@@ -93,66 +91,49 @@
 }
 
 .asset-hero-graphics {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 8px;
-  position: relative;
   margin-left: -23.5px;
 }
 
 .asset-hero-graphics img {
-  width: 70px;
-  height: 70px;
-  object-fit: contain;
-}
-
-.asset-hero-image-main {
-  position: absolute;
-  top: -5%;
-}
-
-.asset-hero-image-sphere {
-  position: absolute;
-  top: 159px;
-  left: 0;
-}
-
-.asset-hero-image-pill {
-  width: 110px;
-  height: 110px;
-  object-fit: contain;
-  position: absolute;
-  bottom: 36px;
-}
-
-.asset-hero-image-toroid {
-  width: 110px;
-  height: 110px;
-  object-fit: contain;
-  position: absolute;
-  bottom: 140px;
-  left: 60px;
-}
-
-.asset-hero-image-cube {
   width: 80px;
   height: 80px;
-  object-fit: contain;
   position: absolute;
-  bottom: 162.5px;
-  left: 202px;
 }
 
-.asset-hero-image-white {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-  position: absolute;
-  top: 155px;
-  left: 202px;
+.asset-hero-graphics img:first-child {
+  top: 35%;
+  left: 100px;
 }
 
-/* Asset Cards Section */
+.asset-hero-graphics img:nth-child(2) {
+  bottom: -20%;
+  left: 100px;
+}
+
+.asset-hero-graphics img:nth-child(3) {
+  top: 40%;
+  left: 50%;
+}
+
+.asset-hero-graphics img:nth-child(4) {
+  top: -8%;
+  left: 70px;
+}
+
+.asset-hero-graphics img:nth-child(5) {
+  top: -8%;
+  left: 180px;
+}
+
+.asset-hero-graphics img:nth-child(6) {
+  bottom: -8%;
+  left: 180px;
+}
+
 .asset-hero-cards {
   background-color: #261e35;
   padding: 20px;
@@ -318,7 +299,6 @@
   background-color: white;
 }
 
-/* Assets Valuation Section */
 .asset-hero-valuation {
   background-color: #101428;
   border: 1px solid rgba(0, 255, 160, 0.15);
@@ -391,13 +371,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .asset-hero-action-icon {
-  width: 100px;
-  height: 90px;
   cursor: pointer;
+  background:#3c354a7a;
+  border: 1px solid #00c287;
+  color: #00c287;
+  font-size: 2rem;
+  padding: 10px;
+  border-radius: 15px;
   transition: transform 0.3s ease;
 }
 
@@ -405,7 +389,6 @@
   transform: scale(1.05);
 }
 
-/* Transactions Section */
 .asset-hero-transactions {
   background-color: #101428;
   border: 1px solid rgba(0, 255, 160, 0.15);
@@ -461,7 +444,7 @@
     justify-content: space-between;
   }
 }
-
+/* 
 @media (max-width: 767px) {
   .asset-hero-main {
     flex-direction: column;
@@ -495,7 +478,32 @@
   }
 
   .asset-hero-action-icon {
-    width: 80px;
-    height: 72px;
+    width: 30px;
+    height: 30px;
+  }
+} */
+/* 
+@media (max-width: 1000px) {
+  .asset-hero-action-icon {
+    width: 50px;
+    padding: 5px;
+    font-size: 2rem;
+  }
+  .asset-hero-left {
+    width: clamp(250px, 95vw, 720px);
+  }
+} */
+
+@media (max-width: 900px) {
+  .asset-hero-action-icon {
+    width: 50px;
+    padding: 5px;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .asset-hero-left {
+    width: clamp(250px, 95vw, 720px);
   }
 }

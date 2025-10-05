@@ -27,7 +27,7 @@ const Contracts = ({ showCryptoBtn = true }) => {
       } catch (error) {
         console.error('Error fetching Contract data:', error);
       } finally {
-        setLoading(false); // ← stop loading
+        setLoading(false);
       }
     };
 

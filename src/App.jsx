@@ -8,6 +8,8 @@ import ForgotPassword from './pages/ForgotPassword'
 import EnterOtp from "./pages/EnterOtp"
 import ResetPassword from "./pages/ResetPassword"
 import Assets from "./pages/Assets"
+import Futures from "./pages/Futures"
+import AiTrading from "./pages/AiTrading"
 import './css/App.css'
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
         <Route path="/enter-otp" element={<EnterOtp />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/assets" element={<Assets />} />
+        <Route path="/futures" element={<Futures />} />
+        <Route path="/ai-trading" element={<AiTrading />} />
       </Routes>
   )
 }

@@ -5,7 +5,7 @@ import '../css/Blog.css';
 
 const Blog = () => {
   const [news, setNews] = useState([]);
-  const [loading, setLoading] = useState(true); // ← added
+  const [loading, setLoading] = useState(true);
   const [expandedIndex, setExpandedIndex] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 

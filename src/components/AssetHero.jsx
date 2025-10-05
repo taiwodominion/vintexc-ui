@@ -1,40 +1,3 @@
-// import React from 'react';
-// import shapeImg1 from '../assets/shape1.png'
-// import shapeImg2 from '../assets/shape2.png'
-// import shapeImg3 from '../assets/shape4.png'
-// import shapeImg4 from '../assets/shape6.png'
-// import shapeImg5 from '../assets/shape5.png'
-// import shapeImg6 from '../assets/shape3.png'
-
-// import '../css/AssetHero.css';
-
-// const AssetHero = () => {
-//   return (
-//     <div className="asset-hero">
-//       <div className="asset-hero-content">
-//         <p className="asset-hero-subtitle">VINTEXC</p>
-//         <p className="asset-hero-title">Your Gateway into Trading</p>
-//         <p className="asset-hero-description">
-//           Paronia is a blockchain platform. We make blockchain accessible.
-//         </p>
-//         <button className="asset-hero-button" type="button">
-//           Add assets
-//         </button>
-//       </div>
-//       <div className="asset-hero-graphics">
-// <img alt="Asset 1" className="asset-hero-main" src={shapeImg1} />
-// <img alt="Asset 2" className="asset-hero-sphere" src={shapeImg2} />
-// <img alt="Asset 3" className="asset-hero-pill" src={shapeImg3} />
-// <img alt="Asset 4" className="asset-hero-toroid" src={shapeImg4} />
-// <img alt="Asset 5" className="asset-hero-cube" src={shapeImg5} />
-// <img alt="Asset 6" className="asset-hero-white" src={shapeImg6} />
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default AssetHero;
-
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -51,10 +14,13 @@ import shapeImg3 from '../assets/shape4.png';
 import shapeImg4 from '../assets/shape6.png';
 import shapeImg5 from '../assets/shape5.png';
 import shapeImg6 from '../assets/shape3.png';
+import bookImg from '../assets/book.png'
 import '../css/AssetHero.css';
+import { faCoins } from '@fortawesome/free-solid-svg-icons/faCoins';
 
 const AssetHero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [showPassword, setShowPassword] = useState(false);
 
   const assetCards = [
     {
@@ -124,9 +90,7 @@ const AssetHero = () => {
       </div>
 
       <div className="asset-hero-grid">
-        {/* Left Column - Hero and Asset Cards */}
         <div className="asset-hero-left">
-          {/* Hero Section */}
           <div className="asset-hero-main">
             <div className="asset-hero-content">
               <p className="asset-hero-subtitle">VINTEXC</p>
@@ -139,7 +103,7 @@ const AssetHero = () => {
               </button>
             </div>
             <div className="asset-hero-graphics">
-              <img alt="Asset 1" className="asset-hero-main" src={shapeImg1} />
+              <img alt="Asset 1" src={shapeImg1} />
               <img
                 alt="Asset 2"
                 className="asset-hero-sphere"
@@ -156,7 +120,6 @@ const AssetHero = () => {
             </div>
           </div>
 
-          {/* Asset Cards Carousel */}
           <div className="asset-hero-cards">
             <div className="asset-hero-cards-container">
               <button
@@ -243,7 +206,6 @@ const AssetHero = () => {
           </div>
         </div>
 
-        {/* Middle Column - Total Assets */}
         <div className="asset-hero-valuation">
           <div className="asset-hero-valuation-header">
             <h4 className="asset-hero-valuation-title">
@@ -253,44 +215,38 @@ const AssetHero = () => {
               className="asset-hero-view-icon"
               style={{ cursor: 'pointer' }}
             >
-              <FontAwesomeIcon icon={faEye} />
+              <FontAwesomeIcon icon={faEye} 
+              onClick={() => setShowPassword(!showPassword)}/>
             </span>
           </div>
           <div className="asset-hero-valuation-amount">
-            <h1 className="asset-hero-amount">0.0000</h1>
+            <h1 className="asset-hero-amount">{showPassword ? '000.000' : '*****'}</h1>
             <p className="asset-hero-currency">USDT</p>
           </div>
           <div className="asset-hero-earnings">
             <p className="asset-hero-earnings-label">Today's earning</p>
-            <p className="asset-hero-earnings-value">$0.0000</p>
+            <p className="asset-hero-earnings-value">{showPassword ? '0.000' : '*****'}</p>
           </div>
           <div className="asset-hero-actions">
-            <img
-              alt="Recharge"
-              className="asset-hero-action-icon"
-              src="/assets/recharge-HX7YuXWu.png"
+            <FontAwesomeIcon icon={faCoins}
+            className='asset-hero-action-icon' 
             />
-            <img
-              alt="Exchange"
-              className="asset-hero-action-icon"
-              src="/assets/exchange-BDOGBrqI.png"
+            <FontAwesomeIcon icon={faCoins}
+            className='asset-hero-action-icon' 
             />
-            <img
-              alt="Withdraw"
-              className="asset-hero-action-icon"
-              src="/assets/withdraw-hjbU-rHC.png"
+            <FontAwesomeIcon icon={faCoins}
+            className='asset-hero-action-icon' 
             />
           </div>
         </div>
 
-        {/* Right Column - Recent Transactions */}
         <div className="asset-hero-transactions">
           <h4 className="asset-hero-transactions-title">Recent Transactions</h4>
           <div className="asset-hero-transactions-empty">
             <img
               alt=""
               className="asset-hero-empty-icon"
-              src="/assets/no-transaction-CKcd9NNL.png"
+              src={bookImg}
             />
             <p className="asset-hero-empty-text">No transaction yet</p>
           </div>
