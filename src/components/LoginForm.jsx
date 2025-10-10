@@ -66,7 +66,6 @@ const LoginForm = () => {
       console.log('Login response:', data);
 
       if (data.status === 'success') {
-        // Clear timeout before navigating
         if (timeoutRef.current) {
           clearTimeout(timeoutRef.current);
         }
@@ -79,13 +78,11 @@ const LoginForm = () => {
         });
       } else {
         setOtpStatus(data.message || 'Incorrect email/username or password');
-        // Set timeout to clear message
         timeoutRef.current = setTimeout(() => setOtpStatus(''), 3000);
       }
     } catch (error) {
-      console.error(error);
+      // console.error(error);
       setOtpStatus('Something went wrong. Please try again.');
-      // Set timeout to clear message
       timeoutRef.current = setTimeout(() => setOtpStatus(''), 3000);
     } finally {
       setLoading(false);

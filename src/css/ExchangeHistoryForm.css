@@ -1,0 +1,119 @@
+.exchange-history-section {
+  padding: 2rem 2.25rem;
+}
+
+.page-title {
+    color: white;
+    font-size: 2rem;
+    padding: 2rem 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 400;
+}
+
+.page-title span {
+    font-size: 1rem;
+    color: #00FFa0;
+}
+
+@media (min-width: 768px) {
+  .exchange-history-section {
+    padding: 0 3rem 2.25rem;
+  }
+}
+
+.exchange-history-panel {
+  flex: 1;
+  border-radius: 1rem;
+  border: 1px solid rgba(0, 255, 160, 0.15);
+}
+
+.exchange-history-header {
+  padding: 1.5rem;
+}
+
+.exchange-history-title {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.exchange-history-content {
+  padding: 0 1.5rem 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.exchange-history-grid {
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
+  flex: 1;
+}
+
+.exchange-history-header-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem 1rem 0 0;
+}
+
+.exchange-history-column {
+  text-align: left;
+  padding: 1rem;
+  color: #ffffff;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.exchange-history-column:first-child {
+  border-radius: 1rem 0 0 1rem;
+}
+
+.exchange-history-column:last-child {
+  border-radius: 0 1rem 1rem 0;
+}
+
+.exchange-history-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: #ffffff;
+}
+
+.exchange-empty-trades-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.exchange-empty-trades-image {
+  width: 140px;
+  height: 140px;
+  margin-bottom: 1rem;
+}
+
+.exchange-empty-trades-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .exchange-history-header-row {
+    grid-template-columns: repeat(7, 140px);
+    min-width: 980px;
+  }
+  
+  .exchange-empty-trades-image {
+    width: 100px;
+    height: 100px;
+  }
+}

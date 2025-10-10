@@ -13,10 +13,8 @@ const Navbar = () => {
   const navbarRef = useRef(null);
   const hamburgerRef = useRef(null);
 
-  // helper to check token
   const getToken = () => localStorage.getItem('token');
 
-  // initial check + whenever location changes
   useEffect(() => {
     const token = getToken();
     const has = !!token;

@@ -1,18 +1,18 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import FutureTrading from '../components/FuturesTrading'
-import FuturesTradeHistory from '../components/FuturesTradeHistory'
+import RechargeForm from '../components/RechargeForm'
+import RechargeHistory from '../components/RechargeHistory'
 import Footer from '../components/Footer'
 
-const Futures = () => {
+const Recharge = () => {
   return (
-    <div className="futures">
+    <div className="ai-trading">
       <nav>
         <Navbar />
       </nav>
       <main>
-        <FutureTrading />
-        <FuturesTradeHistory />
+        <RechargeForm />
+        <RechargeHistory />
       </main>
       <footer>
         <Footer />
@@ -21,4 +21,4 @@ const Futures = () => {
   )
 }
 
-export default Futures
+export default Recharge

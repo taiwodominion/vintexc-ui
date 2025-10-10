@@ -1,18 +1,16 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import FutureTrading from '../components/FuturesTrading'
-import FuturesTradeHistory from '../components/FuturesTradeHistory'
+import FuturesHistoryForm from '../components/FuturesHistoryForm'
 import Footer from '../components/Footer'
 
-const Futures = () => {
+const FuturesHistory = () => {
   return (
-    <div className="futures">
+    <div className="exchange">
       <nav>
         <Navbar />
       </nav>
       <main>
-        <FutureTrading />
-        <FuturesTradeHistory />
+        <FuturesHistoryForm />
       </main>
       <footer>
         <Footer />
@@ -21,4 +19,4 @@ const Futures = () => {
   )
 }
 
-export default Futures
+export default FuturesHistory

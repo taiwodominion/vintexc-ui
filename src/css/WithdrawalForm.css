@@ -1,0 +1,314 @@
+.withdrawal-container {
+  color: white;
+  padding: 20px;
+}
+
+.withdrawal-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+
+.back-icon {
+  font-size: 14px;
+}
+
+.withdrawal-card {
+  background-color: #101428;
+  border: 1px solid rgba(0, 255, 160, 0.15);
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.withdrawal-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.step-indicator {
+  color: #00ffa0;
+  font-size: 15px;
+  text-decoration: underline;
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-label {
+  display: block;
+  color: #ffffffbf;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+
+.select-button:hover {
+  border-color: #00ffa0;
+}
+
+.select-icon {
+  color: #00ffa0;
+  font-size: 12px;
+}
+
+.withdrawal-input {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff0f;
+  border: 1px solid #00ffa04d;
+  color: #ffffffa6;
+  font-size: 13px;
+  border-radius: 6px;
+  padding: 14px 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.withdrawal-amount-labels {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.withdrawal-fee {
+    font-size: 13px;
+    color: #ffffffbf;
+    padding-top: 10px;
+}
+
+.withdrawal-fee span {
+    color: #00ffa0;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #2a2a2a;
+  border: 1px solid #00ffa04d;
+  border-radius: 6px;
+  margin-top: 4px;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.dropdown-item {
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  border: none;
+  color: #ffffffa6;
+  font-size: 13px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background: #00ffa020;
+  color: #00ffa0;
+}
+
+/* Step 2 Styles */
+.step-2-content {
+  width: 100%;
+}
+
+.step-2-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.step-2-title {
+  color: #00ffa0;
+  font-size: 15px;
+  text-decoration: underline;
+}
+
+.back-to-step1-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  color: #00ffa0;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: opacity 0.3s ease;
+}
+
+.back-to-step1-btn:hover {
+  opacity: 0.8;
+}
+
+.back-to-step1-btn svg {
+  font-size: 14px;
+}
+
+.transfer-network-section {
+  margin-bottom: 24px;
+}
+
+.network-label {
+  color: #ffffffbf;
+  font-size: 12px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.network-select-wrapper {
+  width: 100%;
+}
+
+.network-select-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff0f;
+  border: 1px solid #00ffa04d;
+  color: #ffffffa6;
+  font-size: 13px;
+  border-radius: 6px;
+  padding: 14px 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.network-select-button:hover {
+  border-color: #00ffa0;
+}
+
+.network-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.network-select-icon {
+  color: #00ffa0;
+  font-size: 12px;
+}
+
+.qr-code-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.qr-code-container {
+  margin-bottom: 16px;
+}
+
+.qr-code-container img {
+  border-radius: 8px;
+  width: 200px;
+}
+
+.address-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 0 16px;
+}
+
+.wallet-address {
+  color: #ffffff;
+  font-size: 13px;
+  word-break: break-all;
+  text-align: center;
+}
+
+.confirm-withdrawal {
+    width: 100%;
+    background: #00ffa0;
+    color: black;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    padding: 15px 10px;
+    border-radius: 10px;
+}
+
+.note-section {
+  background: #ffffff0d;
+  padding: 16px 20px;
+  border-radius: 8px;
+  margin-top: 16px;
+}
+
+.note-text {
+  font-size: 13px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .withdrawal-container {
+    padding: 40px;
+  }
+  
+  .withdrawal-card {
+    padding: 32px;
+  }
+  
+  .address-container {
+    padding: 0 24px;
+  }
+  
+  .note-section {
+    padding: 20px 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .address-container {
+    padding: 0 32px;
+  }
+  
+  .note-section {
+    padding: 20px 32px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .address-container {
+    padding: 0 48px;
+  }
+  
+  .note-section {
+    padding: 20px 48px;
+  }
+}

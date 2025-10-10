@@ -57,11 +57,17 @@ const Contracts = ({ showCryptoBtn = true }) => {
     }
   };
 
-  const getCoinImage = (symbol) => {
-    if (!symbol) return '';
-    const cleanSymbol = symbol.replace(/USDT|BTC|ETH|USD$/i, '').toLowerCase();
-    return `${imageBaseUrl}${cleanSymbol}.png`;
-  };
+ const getCoinImage = (symbol) => {
+  if (!symbol) return `${imageBaseUrl}usdt.png`;
+  
+  const cleanSymbol = symbol.replace(/(USDT|USD)$/i, '').toLowerCase();
+  
+  if (cleanSymbol === '') {
+    return `${imageBaseUrl}usdt.png`;
+  }
+  
+  return `${imageBaseUrl}${cleanSymbol}.png`;
+};
 
   const formatChange = (value) => {
     const numValue = parseFloat(value);

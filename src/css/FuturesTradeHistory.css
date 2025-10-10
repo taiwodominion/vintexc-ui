@@ -1,0 +1,104 @@
+.future-trade-history-section {
+  padding: 0 1rem 2.25rem;
+}
+
+@media (min-width: 768px) {
+  .future-trade-history-section {
+    padding: 0 3rem 2.25rem;
+  }
+}
+
+.future-trade-history-panel {
+  flex: 1;
+  border-radius: 1rem;
+  border: 1px solid rgba(0, 255, 160, 0.15);
+  background-color: #101428;
+}
+
+.future-trade-history-header {
+  padding: 1.5rem;
+}
+
+.future-trade-history-title {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.future-trade-history-content {
+  padding: 0 1.5rem 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.future-trade-history-grid {
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
+  flex: 1;
+}
+
+.future-trade-history-header-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem 1rem 0 0;
+}
+
+.future-trade-history-column {
+  text-align: left;
+  padding: 1rem;
+  color: #ffffff;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.future-trade-history-column:first-child {
+  border-radius: 1rem 0 0 1rem;
+}
+
+.future-trade-history-column:last-child {
+  border-radius: 0 1rem 1rem 0;
+}
+
+.future-trade-history-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: #ffffff;
+}
+
+.future-empty-trades-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.future-empty-trades-image {
+  width: 140px;
+  height: 140px;
+  margin-bottom: 1rem;
+}
+
+.future-empty-trades-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .future-trade-history-header-row {
+    grid-template-columns: repeat(7, 140px);
+    min-width: 980px;
+  }
+  
+  .future-empty-trades-image {
+    width: 100px;
+    height: 100px;
+  }
+}
