@@ -1,6 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import {
+  faEye,
+  faPaperPlane,
+  faXmark,
+} from '@fortawesome/free-solid-svg-icons';
 import shapeImg1 from '../assets/shape1.png';
 import shapeImg2 from '../assets/shape2.png';
 import shapeImg3 from '../assets/shape4.png';
@@ -10,7 +14,27 @@ import shapeImg6 from '../assets/shape3.png';
 import '../css/AiTradingHero.css';
 
 const AiTradingHero = () => {
-    const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+
+  useEffect(() => {
+    if (showPopup) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [showPopup]);
+
+  const togglePopup = () => {
+    setShowPopup(!showPopup);
+  };
+
+  const closePopup = () => {
+    setShowPopup(false);
+  };
 
   return (
     <div className="ai-trading-hero-container">
@@ -27,7 +51,11 @@ const AiTradingHero = () => {
                 to identify opportunities and optimize your trading performance
                 around the clock
               </p>
-              <button className="ai-hero-button" type="button">
+              <button
+                className="ai-hero-button"
+                onClick={togglePopup}
+                type="button"
+              >
                 <FontAwesomeIcon icon={faPaperPlane} className="button-icon" />
                 Enable Ai Trading
               </button>
@@ -55,8 +83,9 @@ const AiTradingHero = () => {
           <div className="valuation-header">
             <h4 className="valuation-title">Total Assets valuation</h4>
             <span className="view-icon">
-              <FontAwesomeIcon icon={faEye} 
-              onClick={() => setShowPassword(!showPassword)}
+              <FontAwesomeIcon
+                icon={faEye}
+                onClick={() => setShowPassword(!showPassword)}
               />
             </span>
           </div>
@@ -78,6 +107,20 @@ const AiTradingHero = () => {
           </div>
         </div>
       </div>
+
+      {showPopup ? (
+        <div className="ai-pop-up">
+          <div className="ai-pop-up-container">
+            <h1>AI POP UP</h1>
+            <FontAwesomeIcon
+              icon={faXmark}
+              onClick={closePopup}
+            />
+          </div>
+        </div>
+      ) : (
+        ''
+      )}
     </div>
   );
 };

@@ -317,7 +317,6 @@
   margin-bottom: 0.5rem;
 }
 
-/* Income Stats */
 .income-stats {
   display: flex;
   flex-direction: column;
@@ -329,6 +328,26 @@
   padding: 1rem;
   border-radius: 0.75rem;
   text-align: center;
+}
+
+.ai-pop-up {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ai-pop-up-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 12%;
+  width: 400px;
+  height: 90vh;
+  background:#101428;
+  border: 1px solid #00e691;
+  border-radius: 20px;;
+  z-index: 100;
 }
 
 @media (min-width: 640px) {

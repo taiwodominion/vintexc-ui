@@ -435,7 +435,6 @@
   margin: 0;
 }
 
-/* Responsive Design */
 @media (min-width: 768px) {
   .asset-hero {
     padding: 36px 48px 8px 48px;
@@ -510,5 +509,37 @@
 @media (max-width: 768px) {
   .asset-hero-left {
     width: clamp(250px, 95vw, 720px);
+  }
+
+  .asset-hero-actions {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .asset-hero-content {
+    z-index: 1000;
+  }
+
+  .asset-hero-graphics {
+    margin-left: -40%;
+  }
+
+  .asset-hero-card {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .asset-hero-card-symbol {
+    font-size: 14px;
+  }
+
+  .asset-hero-card-exchange {
+    width: 14px;
+    height: 14px;
+  }
+
+  .asset-hero-change-text {
+    font-size: 15px;
   }
 }
