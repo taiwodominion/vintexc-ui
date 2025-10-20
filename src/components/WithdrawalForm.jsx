@@ -42,7 +42,6 @@ const WithdrawalForm = () => {
   const handleCoinSelect = (coin) => {
     setSelectedCoin(coin);
     setShowDropdown(false);
-    // Move to step 2 when a coin is selected
     setCurrentStep(2);
   };
 
@@ -55,12 +54,10 @@ const WithdrawalForm = () => {
       await navigator.clipboard.writeText(walletAddress);
       setCopied(true);
       
-      // Reset the copied state after 2 seconds
       setTimeout(() => {
         setCopied(false);
       }, 2000);
     } catch (err) {
-      // Fallback for older browsers
       const textArea = document.createElement('textarea');
       textArea.value = walletAddress;
       document.body.appendChild(textArea);
@@ -85,7 +82,6 @@ const WithdrawalForm = () => {
 
         <div className="withdrawal-card">
           <div className="withdrawal-content">
-            {/* Step 1 */}
             {currentStep === 1 && (
               <>
                 <p className="step-indicator">Step 1</p>
@@ -126,7 +122,6 @@ const WithdrawalForm = () => {
               </>
             )}
 
-            {/* Step 2 */}
             {currentStep === 2 && (
               <div className="step-2-content">
                 <div className="step-2-header">

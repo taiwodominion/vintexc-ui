@@ -42,6 +42,10 @@
   flex: 1;
 }
 
+.future-trade-history-grid::-webkit-scrollbar{
+  display: none;
+}
+
 .future-trade-history-header-row {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;

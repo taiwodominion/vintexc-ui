@@ -56,6 +56,10 @@
   flex: 1;
 }
 
+.all-transactions-history-grid::-webkit-scrollbar {
+  display: none;
+}
+
 .all-transactions-history-header-row {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -115,5 +119,11 @@
   .all-transactions-empty-trades-image {
     width: 100px;
     height: 100px;
+  }
+}
+
+@media (max-width: 468px) {
+  .all-transactions-history-section {
+    padding: 1rem;
   }
 }

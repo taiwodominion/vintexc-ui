@@ -517,6 +517,10 @@
 }
 
 @media (max-width: 400px) {
+  .asset-hero {
+    padding: 10px;
+  }
+
   .asset-hero-content {
     z-index: 1000;
   }

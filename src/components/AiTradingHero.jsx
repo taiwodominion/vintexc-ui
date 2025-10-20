@@ -4,6 +4,7 @@ import {
   faEye,
   faPaperPlane,
   faXmark,
+  faChevronDown,
 } from '@fortawesome/free-solid-svg-icons';
 import shapeImg1 from '../assets/shape1.png';
 import shapeImg2 from '../assets/shape2.png';
@@ -16,6 +17,29 @@ import '../css/AiTradingHero.css';
 const AiTradingHero = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+  const [showAssetDropdown, setShowAssetDropdown] = useState(false);
+  const [showLeverageDropdown, setShowLeverageDropdown] = useState(false);
+  const [selectedAsset, setSelectedAsset] = useState({ value: 'btc', label: 'BTC', icon: '₿' });
+  const [selectedLeverage, setSelectedLeverage] = useState('1x');
+  const [marginAmount, setMarginAmount] = useState('');
+
+  const assets = [
+    { value: 'btc', label: 'BTC', icon: '₿' },
+    { value: 'usdt', label: 'USDT', icon: '$' },
+    { value: 'trx', label: 'TRX', icon: '⚡' }
+  ];
+
+  const leverageOptions = ['1x', '2x', '3x', '4x', '5x', '6x', '7x', '8x', '9x', '10x'];
+
+  const handleAssetSelect = (asset) => {
+    setSelectedAsset(asset);
+    setShowAssetDropdown(false);
+  };
+
+  const handleLeverageSelect = (leverage) => {
+    setSelectedLeverage(leverage);
+    setShowLeverageDropdown(false);
+  };
 
   useEffect(() => {
     if (showPopup) {
@@ -108,18 +132,105 @@ const AiTradingHero = () => {
         </div>
       </div>
 
-      {showPopup ? (
+      {showPopup && (
         <div className="ai-pop-up">
           <div className="ai-pop-up-container">
-            <h1>AI POP UP</h1>
-            <FontAwesomeIcon
-              icon={faXmark}
-              onClick={closePopup}
-            />
+            <div className="ai-pop-up-header">
+              <h1>Enable AI Trading</h1>
+              <FontAwesomeIcon
+                className="ai-close"
+                icon={faXmark}
+                onClick={closePopup}
+              />
+            </div>
+
+            <div className="form-group">
+              <label className="network-label">Select Asset</label>
+              <div className="network-select-wrapper">
+                <button 
+                  className="network-select-button" 
+                  type="button"
+                  onClick={() => setShowAssetDropdown(!showAssetDropdown)}
+                >
+                  <div className="network-option">
+                    <span className="asset-icon">{selectedAsset.icon}</span>
+                    <p>{selectedAsset.label}</p>
+                  </div>
+                  <FontAwesomeIcon
+                    icon={faChevronDown}
+                    className="network-select-icon"
+                  />
+                </button>
+                {showAssetDropdown && (
+                  <div className="dropdown-menu">
+                    {assets.map((asset) => (
+                      <button
+                        key={asset.value}
+                        className="dropdown-item"
+                        onClick={() => handleAssetSelect(asset)}
+                      >
+                        <span className="asset-icon">{asset.icon}</span>
+                        {asset.label}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <div className="form-group">
+              <label className="network-label">Margin Amount</label>
+              <div className="margin-input-wrapper">
+                <div className="margin-icon">
+                  {selectedAsset.icon}
+                </div>
+                <input
+                  type="number"
+                  className="margin-input"
+                  placeholder="Enter margin amount"
+                  value={marginAmount}
+                  onChange={(e) => setMarginAmount(e.target.value)}
+                />
+              </div>
+            </div>
+
+            <div className="form-group">
+              <label className="network-label">Max Leverage</label>
+              <div className="network-select-wrapper">
+                <button 
+                  className="network-select-button" 
+                  type="button"
+                  onClick={() => setShowLeverageDropdown(!showLeverageDropdown)}
+                >
+                  <div className="network-option">
+                    <p>{selectedLeverage}</p>
+                  </div>
+                  <FontAwesomeIcon
+                    icon={faChevronDown}
+                    className="network-select-icon"
+                  />
+                </button>
+                {showLeverageDropdown && (
+                  <div className="dropdown-menu">
+                    {leverageOptions.map((leverage) => (
+                      <button
+                        key={leverage}
+                        className="dropdown-item"
+                        onClick={() => handleLeverageSelect(leverage)}
+                      >
+                        {leverage}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <button className="enable-ai-button" type="button">
+              Start AI Trading
+            </button>
           </div>
         </div>
-      ) : (
-        ''
       )}
     </div>
   );

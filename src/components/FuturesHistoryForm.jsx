@@ -1,10 +1,21 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import bookImg from '../assets/book.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import '../css/FuturesHistoryForm.css';
 
 const FuturesHistoryForm = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="future-trade-history-section">
+      <h1 className='page-title'
+        onClick={() => navigate('/futures')}
+        >
+            <span><FontAwesomeIcon icon={faArrowLeft} /></span>
+            Futures
+        </h1>
       <div className="future-trade-history-panel">
         <div className="future-trade-history-header">
           <h2 className="future-trade-history-title">Future Trading History</h2>

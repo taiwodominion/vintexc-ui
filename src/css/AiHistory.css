@@ -105,3 +105,9 @@
     height: 100px;
   }
 }
+
+@media (max-width: 500px) {
+  .ai-trade-history-section {
+    padding: 1rem;
+  }
+}

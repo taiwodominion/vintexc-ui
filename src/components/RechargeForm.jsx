@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faArrowLeft, 
@@ -12,6 +13,8 @@ import qrCode from '../assets/qr-code.png'
 import '../css/RechargeForm.css';
 
 const RechargeForm = () => {
+  const navigate = useNavigate();
+
   const [selectedCoin, setSelectedCoin] = useState('');
   const [showDropdown, setShowDropdown] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);
@@ -83,14 +86,15 @@ const RechargeForm = () => {
   return (
     <div className="recharge-container">
       <div className="recharge-wrapper">
-        <button className="back-button" type="button">
+        <button className="back-button"
+        onClick={() => navigate('/assets')}
+         type="button">
           <FontAwesomeIcon icon={faArrowLeft} className="back-icon" />
           Recharge
         </button>
 
         <div className="recharge-card">
           <div className="recharge-content">
-            {/* Step 1 */}
             {currentStep === 1 && (
               <>
                 <p className="step-indicator">Step 1</p>
@@ -131,7 +135,6 @@ const RechargeForm = () => {
               </>
             )}
 
-            {/* Step 2 */}
             {currentStep === 2 && (
               <div className="step-2-content">
                 <div className="step-2-header">

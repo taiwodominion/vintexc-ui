@@ -105,3 +105,9 @@
     height: 100px;
   }
 }
+
+@media (max-width: 468px) {
+  .withdrawal-history-section {
+    padding: 1rem;
+  }
+}
