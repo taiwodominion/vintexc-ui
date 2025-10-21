@@ -522,7 +522,7 @@
   }
 
   .asset-hero-content {
-    z-index: 1000;
+    z-index: 10;
   }
 
   .asset-hero-graphics {

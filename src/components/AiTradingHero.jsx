@@ -18,22 +18,32 @@ const AiTradingHero = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const [showAssetDropdown, setShowAssetDropdown] = useState(false);
+  const [showDurationDropdown, setShowDurationDropdown] = useState(false);
   const [showLeverageDropdown, setShowLeverageDropdown] = useState(false);
-  const [selectedAsset, setSelectedAsset] = useState({ value: 'btc', label: 'BTC', icon: '₿' });
+  const [selectedAsset, setSelectedAsset] = useState({ value: 'btc', label: 'BTC' });
+  const [selectedDuration, setSelectedDuration] = useState('1min');
   const [selectedLeverage, setSelectedLeverage] = useState('1x');
   const [marginAmount, setMarginAmount] = useState('');
 
   const assets = [
-    { value: 'btc', label: 'BTC', icon: '₿' },
-    { value: 'usdt', label: 'USDT', icon: '$' },
-    { value: 'trx', label: 'TRX', icon: '⚡' }
+    { value: 'btc', label: 'BTC',},
+    { value: 'usdt', label: 'USDT',},
+    { value: 'trx', label: 'TRX', }
   ];
 
   const leverageOptions = ['1x', '2x', '3x', '4x', '5x', '6x', '7x', '8x', '9x', '10x'];
 
+  const durationOptions = ['1min', '3min', '5min', '15min', '30min', '1hr', '2hr', '4hr', '6hr', '8hr'];
+
+
   const handleAssetSelect = (asset) => {
     setSelectedAsset(asset);
     setShowAssetDropdown(false);
+  };
+
+  const handleDurationSelect = (time) => {
+    setSelectedDuration(time);
+    setShowDurationDropdown(false);
   };
 
   const handleLeverageSelect = (leverage) => {
@@ -225,6 +235,72 @@ const AiTradingHero = () => {
                 )}
               </div>
             </div>
+
+            <div className="form-group">
+              <label className="network-label">Trade Duration</label>
+              <div className="network-select-wrapper">
+                <button 
+                  className="network-select-button" 
+                  type="button"
+                  onClick={() => setShowDurationDropdown(!showDurationDropdown)}
+                >
+                  <div className="network-option">
+                    <p>{selectedDuration}</p>
+                  </div>
+                  <FontAwesomeIcon
+                    icon={faChevronDown}
+                    className="network-select-icon"
+                  />
+                </button>
+                {showDurationDropdown && (
+                  <div className="dropdown-menu">
+                    {durationOptions.map((time) => (
+                      <button
+                        key={time}
+                        className="dropdown-item"
+                        onClick={() => handleDurationSelect(time)}
+                      >
+                        {time}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <div className="form-group">
+              <label className="network-label">Take Profit (%)</label>
+              <div className="margin-input-wrapper">
+                <div className="margin-icon">
+                  {selectedAsset.icon}
+                </div>
+                <input
+                  type="number"
+                  className="margin-input"
+                  placeholder="e.g, 20 for (20%)"
+                  value={marginAmount}
+                  onChange={(e) => setMarginAmount(e.target.value)}
+                />
+              </div>
+            </div>
+
+            <div className="form-group">
+              <label className="network-label">Stop Loss (%)</label>
+              <div className="margin-input-wrapper">
+                <div className="margin-icon">
+                  {selectedAsset.icon}
+                </div>
+                <input
+                  type="number"
+                  className="margin-input"
+                  placeholder="e.g, 5 for (5%)"
+                  value={marginAmount}
+                  onChange={(e) => setMarginAmount(e.target.value)}
+                />
+              </div>
+            </div>
+
+          
 
             <button className="enable-ai-button" type="button">
               Start AI Trading
