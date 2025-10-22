@@ -189,3 +189,9 @@
         display: flex;
     }
 }
+
+@media (max-width: 500px) {
+  .controls-content {
+    width: 100%;
+  }
+}

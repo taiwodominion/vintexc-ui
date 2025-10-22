@@ -17,9 +17,7 @@ import '../css/AiTradingHero.css';
 const AiTradingHero = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
-  const [showAssetDropdown, setShowAssetDropdown] = useState(false);
-  const [showDurationDropdown, setShowDurationDropdown] = useState(false);
-  const [showLeverageDropdown, setShowLeverageDropdown] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null)
   const [selectedAsset, setSelectedAsset] = useState({ value: 'btc', label: 'BTC' });
   const [selectedDuration, setSelectedDuration] = useState('1min');
   const [selectedLeverage, setSelectedLeverage] = useState('1x');
@@ -38,17 +36,17 @@ const AiTradingHero = () => {
 
   const handleAssetSelect = (asset) => {
     setSelectedAsset(asset);
-    setShowAssetDropdown(false);
+    setOpenDropdown(false);
   };
 
   const handleDurationSelect = (time) => {
     setSelectedDuration(time);
-    setShowDurationDropdown(false);
+    setOpenDropdown(false);
   };
 
   const handleLeverageSelect = (leverage) => {
     setSelectedLeverage(leverage);
-    setShowLeverageDropdown(false);
+    setOpenDropdown(false);
   };
 
   useEffect(() => {
@@ -145,13 +143,16 @@ const AiTradingHero = () => {
       {showPopup && (
         <div className="ai-pop-up">
           <div className="ai-pop-up-container">
-            <div className="ai-pop-up-header">
-              <h1>Enable AI Trading</h1>
+            <div className="ai-pop-head-content">
               <FontAwesomeIcon
                 className="ai-close"
                 icon={faXmark}
                 onClick={closePopup}
               />
+            <div className="ai-pop-up-header">
+              <h1>Enable AI Trading</h1>
+              <p>Configure your ai trading parameters</p>
+            </div>
             </div>
 
             <div className="form-group">
@@ -160,7 +161,7 @@ const AiTradingHero = () => {
                 <button 
                   className="network-select-button" 
                   type="button"
-                  onClick={() => setShowAssetDropdown(!showAssetDropdown)}
+                  onClick={() => setOpenDropdown(openDropdown === 'asset' ? null : 'asset')}
                 >
                   <div className="network-option">
                     <span className="asset-icon">{selectedAsset.icon}</span>
@@ -171,8 +172,8 @@ const AiTradingHero = () => {
                     className="network-select-icon"
                   />
                 </button>
-                {showAssetDropdown && (
-                  <div className="dropdown-menu">
+                {openDropdown === 'asset' && (
+                  <div className="ai-dropdown-menu">
                     {assets.map((asset) => (
                       <button
                         key={asset.value}
@@ -201,6 +202,7 @@ const AiTradingHero = () => {
                   value={marginAmount}
                   onChange={(e) => setMarginAmount(e.target.value)}
                 />
+                <p>Available amount: 0.00000 Btc</p>
               </div>
             </div>
 
@@ -210,7 +212,7 @@ const AiTradingHero = () => {
                 <button 
                   className="network-select-button" 
                   type="button"
-                  onClick={() => setShowLeverageDropdown(!showLeverageDropdown)}
+                  onClick={() => setOpenDropdown(openDropdown === 'leverage' ? null : 'leverage')}
                 >
                   <div className="network-option">
                     <p>{selectedLeverage}</p>
@@ -220,8 +222,8 @@ const AiTradingHero = () => {
                     className="network-select-icon"
                   />
                 </button>
-                {showLeverageDropdown && (
-                  <div className="dropdown-menu">
+                {openDropdown === 'leverage' && (
+                  <div className="ai-dropdown-menu">
                     {leverageOptions.map((leverage) => (
                       <button
                         key={leverage}
@@ -242,7 +244,7 @@ const AiTradingHero = () => {
                 <button 
                   className="network-select-button" 
                   type="button"
-                  onClick={() => setShowDurationDropdown(!showDurationDropdown)}
+                  onClick={() => setOpenDropdown(openDropdown === 'duration' ? null : 'duration')}
                 >
                   <div className="network-option">
                     <p>{selectedDuration}</p>
@@ -252,8 +254,8 @@ const AiTradingHero = () => {
                     className="network-select-icon"
                   />
                 </button>
-                {showDurationDropdown && (
-                  <div className="dropdown-menu">
+                {openDropdown === 'duration' && (
+                  <div className="ai-dropdown-menu">
                     {durationOptions.map((time) => (
                       <button
                         key={time}
